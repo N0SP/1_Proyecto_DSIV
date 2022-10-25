@@ -290,3 +290,55 @@
     font-style: normal;
     font-weight: 275;
     }
+
+    @media only screen and (min-width: 0px) and (max-width: 770px ) { 
+    
+
+    }
+
+    @media (min-width: 770px) {
+        nav { 
+
+            height:90px;
+            flex-wrap: wrap;
+            width:100%;
+            display: flex;
+            justify-content: space-between;   
+            padding: 0% 4%;
+            box-sizing:border-box;
+            }
+        
+            ul {
+        
+            display: flex;
+            justify-content: space-between; 
+            }  
+    }
+
+
+
+    @media (min-width: 800px) { 
+
+        .itemseperate {
+            padding-left:4%;
+            border-left:1px solid #003243;
+            margin: 10px 0px
+            
+        }
+         nav { 
+
+            height:90px;
+            flex-wrap: wrap;
+            width:100%;
+            display: flex;
+            justify-content: space-between;   
+            padding: 0% 4%;
+            box-sizing:border-box;
+            }
+        
+            ul {
+        
+            display: flex;
+            justify-content: space-between; 
+            }  
+    }
