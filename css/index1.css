@@ -20,7 +20,53 @@
     header {
     width:100%;
     }
-    
+
+    nav { 
+
+    height:70px;
+    width:100%;
+    display: flex;
+    justify-content: space-between;   
+    padding: 0% 4%;
+  
+    box-sizing:border-box;
+    }
+
+    ul {
+
+    display: flex;
+    justify-content: space-between; 
+    }    
+
+    nav li {
+    display:flex;
+    text-decoration: none;
+    list-style: none;
+
+
+    }  
+
+    nav>li:nth-child(9) img {
+    height:40px;
+    }
+
+    nav li a {
+
+    text-decoration: none;
+    list-style: none;
+    white-space: nowrap;
+    color:#003243;
+    font-size: 15px;
+    font-weight:600;
+
+
+
+    }
+
+    nav li>*{
+    margin:auto;
+    }
+
     .main {
         color:#9AD7E4;
         font-weight:800;
@@ -28,33 +74,17 @@
     }
 
 
-    .itemseperate {
-        padding-left:4%;
-        border-left:1px solid #003243;
-        margin: 10px 0px
-        
-    }
+   
 
 
    /*header banner*/
-    .banner {
-    margin-top:4%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:100%;
-    }
+  
 
     .chica {
     width:45%;
   
     }
 
-    .bannertext {
-    text-align:center;
-    height:300px;
-    width:35%;
-    }
 
     .banner h1 {
     color: #003243;
@@ -91,29 +121,13 @@
     text-align: center;
     }
 
-    .container1Sub  {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-
-    }
+   
 
 
-    .container2Sub
-    {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        }
+   
 
 
-    .container1Sub img {
-    width:30%;
-    height:300px;
-    margin:2%;
-    border-radius:100px;
-    }
+   
 
     .container1Sub h2 {
     font-family: 'Poppins';
@@ -125,14 +139,7 @@
     border-bottom: 3px solid #00F9EA;
     }
 
-    .container1Sub div {
-    width: 35%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    }
+   
 
     .container1Sub p  {
     font-family: 'Poppins';
@@ -169,14 +176,7 @@
     height:300px;
     }
 
-    .container2Sub div {
-    width: 28%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    }
+    
 
     .container2Sub h2 {
     font-family: 'Poppins';
@@ -234,54 +234,122 @@
     font-weight: 275;
     }
 
-    @media only screen and (min-width: 0px) and (max-width: 770px ) { 
-    
 
-    }
 
-    @media (min-width: 770px) {
-        nav { 
 
-            height:90px;
-            flex-wrap: wrap;
+    @media (max-width: 670px) { 
+        
+            .banner {
+            margin-top:4%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             width:100%;
-            display: flex;
-            justify-content: space-between;   
-            padding: 0% 4%;
-            box-sizing:border-box;
             }
-        
-            ul {
-        
+            .bannertext {
+            text-align:center;
+            height:250px;
+            width:60%;
+            }
+
+            .container1Sub  {
             display: flex;
-            justify-content: space-between; 
-            }  
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+
+            }
+
+            .container1Sub img {
+            display:none;
+
+            }
+
+            .container1Sub div {
+            width: 60%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            }
+
+            .container2Sub
+            {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction:column;
+
+            }
+
+            .container2Sub div {
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            margin-bottom:5%;
+            }
+
     }
 
+        /*laptop*/
 
+        @media(min-width: 670px) {
+            .banner {
+            margin-top:4%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:100%;
+            }
 
-    @media (min-width: 800px) { 
+            .bannertext {
+            text-align:center;
+            height:300px;
+            width:35%;
+            }
 
-        .itemseperate {
-            padding-left:4%;
-            border-left:1px solid #003243;
-            margin: 10px 0px
-            
+            .container1Sub  {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            }
+
+            .container1Sub img {
+            width:30%;
+            height:300px;
+            margin:2%;
+            border-radius:100px;
+            }
+
+            .container1Sub div {
+            width: 35%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            }
+
+            .container2Sub
+            {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            }
+
+            .container2Sub div {
+                width: 28%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+                }
         }
-         nav { 
-
-            height:90px;
-            flex-wrap: wrap;
-            width:100%;
-            display: flex;
-            justify-content: space-between;   
-            padding: 0% 4%;
-            box-sizing:border-box;
-            }
-        
-            ul {
-        
-            display: flex;
-            justify-content: space-between; 
-            }  
-    }
