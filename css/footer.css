@@ -1,13 +1,14 @@
 footer {
        
-    
+    font-size: 18px !important;
     margin-top:15px;
     height:100px;
     display: flex;
     justify-content: flex-start;
-    
+ 
     margin-top: 5%;
     padding: 0% 2%;
+
 
 
 }
@@ -48,4 +49,12 @@ footer div {
     display:flex;
     justify-content: flex-end;
     align-items: center
+}
+
+@media (max-width: 1080px) { 
+
+
+    footer {
+        flex-wrap: wrap;
+    }
 }
