@@ -1,0 +1,43 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    margin: 0px;
+}
+
+.titulo{
+    color: gray;
+    font-size:20px;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.imagen{
+
+}
+
+.flex{
+    display: flex;
+    justify-content: space-evenly;
+    border: 2px skyblue;
+}
+
+.texto{
+    font-size: 14px;
+    font-size: 900;
+    text-align: right;
+    text-decoration: none;
+}
+
+.img-com{
+    width: 15%;
+
+}
+body ul{
+    width: 15%;
+    list-style-type: none;
+    margin: 0%;
+}
