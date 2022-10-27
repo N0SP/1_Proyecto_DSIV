@@ -1,10 +1,211 @@
 body {
-    width:100vw;
+    width:100%;
     font-family: 'Poppins', sans-serif;
     background-color:#FFFFFF;
     margin:0%;
     }
 
 .head {
-    width:100%;
+    max-width: 100%;
+    position: relative;
+}
+
+.box {
+    position: relative;
+    width: 500px;
+    height: auto;
+    background: rgba(1, 126, 169, 0.66);
+    border-radius: 12px;
+}
+.box img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-top: 50px;
+}
+.box-text{
+    text-align: center;
+    width: 50%;
+}
+
+.container {
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0% 10%;
+    box-sizing: border-box;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.container2 {
+    background-color: #E3EDFF;
+    max-width: 100%;
+    position: relative;
+}
+
+.head h1{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 72px;
+    text-align: center;
+    color: #003243;
+}
+
+.section-cards {
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0% 10%;
+    box-sizing: border-box;
+    align-items: center;
+    margin-top: 5%;
+    flex-wrap: wrap;
+    padding-top: 5%;
+}
+
+.card {
+    max-width: 18%;
+    height: auto;
+    box-sizing: border-box;
+    align-items: center;
+    margin-top: 5%;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 12px;
+    text-align: center;
+    margin: 0px 100px 50px 100px;
+}
+
+.card-img {
+    width: 100%;
+    height: 250px;
+    background: #9AD7E4;
+    border-radius: 12px;
+}
+
+.card-img img {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* mobile */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+
+        .card {
+            max-width: 100%;
+            height: auto;
+            box-sizing: border-box;
+            align-items: center;
+            margin-top: 5%;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+            border-radius: 12px;
+            text-align: center;
+            margin: 0px 30px 50px 30px;
     }
+        .container {
+            width: auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding: 0% 10%;
+            box-sizing: border-box;
+            align-items: center;
+            margin-top: 10%;
+            flex-direction: column-reverse;
+        }
+        .box-text {
+            text-align: center;
+            width: auto;
+        }
+        .head h1 {
+            font-style: normal;
+            font-weight: 600;
+            font-size: xx-large;
+            line-height: 72px;
+            text-align: center;
+            color: #003243;
+        }
+        .box {
+            position: relative;
+            height: auto;
+            background: rgba(1, 126, 169, 0.66);
+            border-radius: 12px;
+            max-width: -webkit-fill-available;
+        }
+        .box img {
+            position: relative;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-top: 50px;
+        }
+
+
+    }
+
+/* tablet */
+    @media  screen and (min-width: 481px) and (max-width: 780px) {
+
+    .card {
+        max-width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        align-items: center;
+        margin-top: 5%;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 12px;
+        text-align: center;
+        margin: 0px 150px 50px 150px;
+}
+    .container {
+        width: auto;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 0% 10%;
+        box-sizing: border-box;
+        align-items: center;
+        margin-top: 10%;
+        flex-direction: column-reverse;
+    }
+    .box-text {
+        text-align: center;
+        width: auto;
+    }
+    .head h1 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: xx-large;
+        line-height: 72px;
+        text-align: center;
+        color: #003243;
+    }
+    .box {
+        position: relative;
+        height: auto;
+        background: rgba(1, 126, 169, 0.66);
+        border-radius: 12px;
+        max-width: -webkit-fill-available;
+    }
+    .box img {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        margin-top: 50px;
+    }
+    .card-img {
+        width: 100%;
+        height: 330px;
+        background: #9AD7E4;
+        border-radius: 12px;
+    }
+}
