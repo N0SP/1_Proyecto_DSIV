@@ -200,39 +200,6 @@
     color: #017EA9;
     }
 
-    /*footer*/
-
-    footer {
-       
-    
-        margin-top:15px;
-        height:100px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        margin-top: 5%;
-        padding: 0% 4%;
-    }
-
-    footer li {
-
-        text-decoration: none;
-        list-style: none;
-        display:flex;
-    }
-
-    footer li>* {
-        margin: auto;
-    }
-
-    footer li a {
-        text-decoration: none;
-    list-style: none;
-    white-space: nowrap;
-    color: #003243;
-    font-style: normal;
-    font-weight: 275;
-    }
 
 
 
@@ -341,6 +308,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-bottom: 5%;
 
             }
 

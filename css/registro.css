@@ -1,5 +1,7 @@
 body{
     margin: 0px;
+    min-width: 600px;
+    background: #A7DFEC;
 }
 
 nav{
@@ -16,7 +18,8 @@ nav img{
     display: flex;
     justify-content: center;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    height: 607px;
+    height: 100%;
+    flex-wrap: wrap;
 }
 
 .formu{
@@ -24,9 +27,10 @@ nav img{
     border-radius: 20px;
     border: solid 5px #00F9EA;
     margin-top: 5%;
-    margin-bottom: 5%;
-    width: 450px;
+    margin-bottom: 2%;
     text-align: center;
+    width: 450px;
+    min-width: 250px;
 }
 
 .imagen{
