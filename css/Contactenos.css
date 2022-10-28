@@ -1,0 +1,95 @@
+*{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    color:#003243;
+}
+
+header{
+    height: 160px;
+    margin:0px;
+}
+
+.imgnav{
+    width:14%;
+    display: flex;
+    float: left;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.menu{
+    text-decoration: none;
+    padding: 15px;
+    font-size: 135%;
+}
+
+nav{
+    display: flex;
+    float: right;
+    padding-top: 23px;
+    padding-right: 10px;
+    
+}
+
+.us{
+    width: 650px;
+    background-color:#368ca9;
+    border-radius: 15px;
+}
+.imag{
+    display:flex;
+    padding-bottom: 50px;
+    padding-left: 7%;
+}
+
+.imagdiv{
+    width: 65%;
+    padding-top: 4%;
+    
+}
+
+.qs{
+    text-align: center;
+    padding-top: 4%;
+    padding-right: 4%;
+    float: right;
+    padding-left: 4%;
+}
+
+.div1{
+    text-align:center;
+}
+
+.div2{
+    background-color: aliceblue;
+    display: flex;
+}
+
+.cuadritos{
+    background-color:white;
+    border: solid 1px black ;
+    margin-left: 7%;
+    margin-right: 7%;
+    border-radius: 15px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+    border: none;
+    box-shadow: 1px 1px 7px gray;
+}
+
+.imgcuad{
+    width: 150px;
+}
+
+.cuadritos2{
+    background-color:aliceblue;
+    margin-left: 14%;
+    margin-right: 14%;
+    border-radius: 15px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
