@@ -3,6 +3,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     font-size:12px;
+    background: linear-gradient(white, hsl(176, 100%, 88%),#c4fcf8,#dbfffd);
 }
 
 
