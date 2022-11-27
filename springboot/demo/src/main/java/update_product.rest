@@ -1,0 +1,9 @@
+PUT http://localhost:8080/producto
+Content-Type: application/json
+
+{
+    "productId": 2,
+    "nombre": "Galleta",
+    "precio": 2,
+    "foto": "facebook.com"
+}

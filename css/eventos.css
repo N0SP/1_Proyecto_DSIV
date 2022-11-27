@@ -4,7 +4,7 @@
 body {
    font-family: 'Poppins', sans-serif;
    margin:0%;
-   background-color: #FFFFFF;
+   background: linear-gradient(white, hsl(176, 100%, 88%),#c4fcf8,#dbfffd);
 }
 .main {
     color:#9AD7E4;
@@ -64,6 +64,7 @@ color: #017EA9;
    height:250px;
    margin: auto;
    padding:3%;
+   border-radius: 10px;
    box-sizing: border-box;
    
 }
@@ -111,6 +112,7 @@ color: #017EA9;
         display: flex;
         justify-content:space-evenly;
         align-items:flex-start;
+        padding-bottom: 6%;
     
          
     }

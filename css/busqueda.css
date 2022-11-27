@@ -159,6 +159,8 @@ body {
 
  }
 
+ /*movil*/
+
  @media (max-width: 630px) { 
 
     .sidebar {

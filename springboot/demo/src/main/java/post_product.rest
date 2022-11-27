@@ -1,0 +1,8 @@
+POST http://localhost:8080/producto
+Content-Type: application/json
+
+{
+    "nombre": "agua5",
+    "precio": 1,
+    "foto": "facebook.com"
+}
