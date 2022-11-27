@@ -8,7 +8,7 @@ public class Conexion {
     public Connection openDb() {
         try {
         Class.forName("org.mariadb.jdbc.Driver");
-         return DriverManager.getConnection("jdbc:mariadb://localhost:3306/deportes", "ellu_user", "Mukuhuku98");
+         return DriverManager.getConnection("jdbc:mariadb://localhost:3306/deportes", "ellu_user", "password");
         } catch(SQLException e) {
             int x=1;
         } catch(ClassNotFoundException cnfx) {
