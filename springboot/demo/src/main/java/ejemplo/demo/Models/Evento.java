@@ -8,14 +8,16 @@ public class Evento {
     private String descripcion;
     private int categoriaId;
     private String categoriaNombre;
+    private String fotoUrl;
 
 
-public Evento(int eventoId, String titulo, String descripcion, int categoriaId, String categoriaNombre) {
+public Evento(int eventoId, String titulo, String descripcion, int categoriaId, String categoriaNombre, String fotoUrl) {
     this.eventoId = eventoId;
     this.titulo = titulo;
     this.descripcion = descripcion;
     this.categoriaId = categoriaId;
     this.categoriaNombre=categoriaNombre;
+    this.fotoUrl=fotoUrl;
 }
 
 public int getEventoId() {
@@ -56,6 +58,14 @@ public String getCategoriaNombre() {
 
 public void setCategoriaNombre(String categoriaNombre) {
     this.categoriaNombre = categoriaNombre;
+}
+
+public String getFotoUrl() {
+    return fotoUrl;
+}
+
+public void setFotoUrl(String fotoUrl) {
+    this.fotoUrl = fotoUrl;
 }
 
 }

@@ -5,16 +5,15 @@ body {
     font-size:12px;
 }
 
-.searchContainer {
-    display:flex;
-    flex-direction: column;
 
-       
-    padding-left:3%;
 
+
+.subSection p{
+    font-weight:275;
+    color:#017EA9;
 }
 
-.container img {
+.subSection img {
     height:120px;
     width:75%;
  
@@ -32,6 +31,7 @@ body {
     box-sizing: border-box;
     gap:100px;
     margin: 0% 4%;
+    flex-wrap: wrap;
 }
 
 
@@ -68,13 +68,10 @@ body {
 
 .subSection h3, .subSection h4 {
    color: #003243;
-   font-weight:400;
+   font-weight:275;
 }
 
-button {
-    width:40%;
-    margin:auto;
-}
+
 
 .subSection h3 {
    border-bottom:2px solid #003243;
@@ -82,7 +79,7 @@ button {
 
  }
 
- button {
+ .info {
     font-family: 'Poppins';
     border-radius: 20px;
     border-style:none;
@@ -90,6 +87,8 @@ button {
     background-color:#017EA9;
     color:white;
     font-weight: 500;
+    width:40%;
+    margin:auto;
 }
 
 

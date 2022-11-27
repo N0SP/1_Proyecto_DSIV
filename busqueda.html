@@ -32,7 +32,8 @@
         </li>
     </nav>
         <h1>¿Que estas buscando?</h1>
-        <input type="text" placeholder="Lorem ipsum...">
+        <input type="text" placeholder="Lorem ipsum..." id="textbox">
+        <button onclick="filter()"> Busca</button>
     </header>
 
 <section class="container">
@@ -47,15 +48,15 @@
     <div class="searchContainer">
         
         <div>
-            <h1 class="resultados">5 resultados</h1>
+            <h1 class="resultados">Resultados</h1>
         </div>
-        <div>
-            <h2 class="noticiatitle">3 Eventos referentes a "Lorem ipsum"</h2>
+        <div id="resultE">
+          
         </div>
 
 
-        <div class="upperSection">
-            <div>
+        <div class="upperSection" id="eventos">
+            <!--<div>
                 <div class="fiba"><img src="img/fiba.png" alt=""></div>
                 <div><h3>Fiba eurobasket</h3><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p></div>
             </div>
@@ -68,15 +69,13 @@
             <div>
                 <div class="fiba"><img src="img/fiba.png" alt=""></div>
                 <div><h3>Fiba eurobasket</h3><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p></div>
-            </div>
+            </div>-->
         </div>
         
-        <div>
-            <h2 class="noticiatitle"> 2 Noticias referentes a "Lorem ipsum"</h2>
-        </div>
+        <div id="resultN"></div>
 
-        <div class="lowerSection">
-            <div>
+        <div class="lowerSection" id="noticias">
+            <!--<div>
                 <div><h3>Beisbal</h3><h4>Los Yankees Ganan la liga</h4></div>
                 <div><img src="img/yankees.jpeg" alt=""></div>
                 <div><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p></div>
@@ -86,7 +85,7 @@
                 <div><h3>Beisbal</h3><h4>Los Yankees Ganan la liga</h4></div>
                 <div><img src="img/yankees.jpeg" alt=""></div>
                 <div><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p></div>
-            </div>
+            </div>-->
             
         </div>
     </div>
@@ -105,6 +104,6 @@
 
 
     </footer>
-
+    <script src="script/busqueda.js"></script>
 </body>
 </html>

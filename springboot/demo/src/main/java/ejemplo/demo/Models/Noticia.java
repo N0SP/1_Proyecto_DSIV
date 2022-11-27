@@ -7,13 +7,17 @@ public class Noticia {
     private String descripcion;
     private int categoriaId;
     private String categoriaNombre;
+    private String contenido;
+    private String fotoUrl;
     
-    public Noticia(int noticiaId, String titulo, String descripcion, int categoriaId, String categoriaNombre) {
+    public Noticia(int noticiaId, String titulo, String descripcion, int categoriaId, String categoriaNombre, String contenido, String fotoUrl) {
         this.noticiaId = noticiaId;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.categoriaId = categoriaId;
         this.categoriaNombre = categoriaNombre;
+        this.contenido=contenido;
+        this.fotoUrl=fotoUrl;
     }
 
 
@@ -56,6 +60,26 @@ public class Noticia {
 
     public void setCategoriaNombre(String categoriaNombre) {
         this.categoriaNombre = categoriaNombre;
+    }
+
+
+    public String getContenido() {
+        return contenido;
+    }
+
+
+    public void setContenido(String contenido) {
+        this.contenido = contenido;
+    }
+
+
+    public String getFotoUrl() {
+        return fotoUrl;
+    }
+
+
+    public void setFotoUrl(String fotoUrl) {
+        this.fotoUrl = fotoUrl;
     }
 
 }
