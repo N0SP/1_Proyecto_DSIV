@@ -10,6 +10,8 @@ import ejemplo.demo.Models.Productos;
 import ejemplo.demo.Models.Viajes;
 import ejemplo.demo.Models.Noticia;
 import ejemplo.demo.Models.Evento;
+import ejemplo.demo.Models.Categoria;
+
 
 public class Productosdb {
     Connection _cn;
@@ -125,7 +127,7 @@ public class Productosdb {
     public List<Noticia> ObtenerNoticias() {
         try {
            Statement stmt = _cn.createStatement();
-            String query = "SELECT noticiaID,titulo, descripcion,categoria.categoriaID,nombre FROM categoria JOIN noticia on categoria.categoriaID=noticia.categoriaID";
+            String query = "SELECT noticiaID,titulo, descripcion,categoria.categoriaID,nombre,contenido,fotoUrl FROM categoria JOIN noticia on categoria.categoriaID=noticia.categoriaID";
             List<Noticia> noticias = new ArrayList<>();
             ResultSet result = stmt.executeQuery(query);
             while (result.next()) {
@@ -134,7 +136,9 @@ public class Productosdb {
                     result.getString("titulo"),
                    result.getString("descripcion"),
                    result.getInt("categoriaID"),
-                   result.getString("nombre")
+                   result.getString("nombre"),
+                   result.getString("contenido"),
+                   result.getString("fotoUrl")
                     );
                 noticias.add(noticia);
              }
@@ -154,7 +158,7 @@ public class Productosdb {
     public List<Evento> ObtenerEventos() {
         try {
            Statement stmt = _cn.createStatement();
-            String query = "SELECT eventoID,titulo, descripcion,categoria.categoriaID,nombre FROM categoria JOIN evento on categoria.categoriaID=evento.categoriaID";
+            String query = "SELECT eventoID,titulo, descripcion,categoria.categoriaID,nombre, fotoUrl FROM categoria JOIN evento on categoria.categoriaID=evento.categoriaID";
             List<Evento> eventos = new ArrayList<>();
             ResultSet result = stmt.executeQuery(query);
             while (result.next()) {
@@ -163,7 +167,8 @@ public class Productosdb {
                     result.getString("titulo"),
                    result.getString("descripcion"),
                    result.getInt("categoriaID"),
-                   result.getString("nombre")
+                   result.getString("nombre"),
+                   result.getString("fotoUrl")
                     );
                 eventos.add(evento);
              }
@@ -178,6 +183,146 @@ public class Productosdb {
         }
         return null;
     }
+
+    public List<Categoria> ObtenerCategorias() {
+        try {
+           Statement stmt = _cn.createStatement();
+            String query = "SELECT * FROM categoria";
+            List<Categoria> categorias = new ArrayList<>();
+            ResultSet result = stmt.executeQuery(query);
+            while (result.next()) {
+                Categoria categoria = new Categoria(
+                    result.getInt("categoriaID"), 
+                    result.getString("nombre")
+                    );
+                categorias.add(categoria);
+             }
+
+             result.close();
+             stmt.close();
+             return categorias;
+
+
+        } catch (Exception e) {
+            int x= 1;
+        }
+        return null;
+    }
+
+    public Noticia ObtenerNoticia(int noticiaId) {
+
+        try {
+            Statement stmt = _cn.createStatement();
+            String query = "Call GetNoticia("+noticiaId+")";
+            ResultSet result = stmt.executeQuery(query);
+            if(result.next()) {
+            Noticia noticia = new Noticia(
+                    result.getInt("noticiaID"), 
+                    result.getString("titulo"),
+                   result.getString("descripcion"),
+                   result.getInt("categoriaID"),
+                   result.getString("nombre"),
+                   result.getString("contenido"),
+                   result.getString("fotoUrl")
+                );
+            
+                result.close();
+                stmt.close();
+                return noticia;
+        }
+        } catch(Exception e) {
+            int x=1;
+
+        }
+        return null;
+
+    }
+
+    public int EliminarEventos(int eventoId) {
+        int resultado = 0;
+
+        try {
+            Statement stmt = _cn.createStatement();
+            String query = "Call DeleteEvento("+eventoId+")";
+            return stmt.executeUpdate(query);
+        } catch(Exception e) {
+            int x=1;
+
+        }
+        return resultado;
+
+    }
+
+    public int EliminarNoticias(int noticiaId) {
+        int resultado = 0;
+
+        try {
+            Statement stmt = _cn.createStatement();
+            String query = "Call DeleteNoticia("+noticiaId+")";
+            return stmt.executeUpdate(query);
+        } catch(Exception e) {
+            int x=1;
+
+        }
+        return resultado;
+
+    }
+
+    public int GuardarEvento(Evento evento){
+        int resultado=0;
+
+        try {
+            Statement stm = _cn.createStatement();
+            String query ="Call InsertarEvento('"
+            +evento.getTitulo()+"','"+evento.getDescripcion()+"',"+evento.getCategoriaId()+" ,'"+evento.getFotoUrl()+"')";
+
+            resultado=stm.executeUpdate(query);
+        } catch(Exception e) {
+            int x=1;
+
+        }
+        return resultado;
+
+    }
+
+    public int GuardarNoticia(Noticia noticia){
+        int resultado=0;
+
+        try {
+            Statement stm = _cn.createStatement();
+            String query ="Call InsertarNoticia('"
+            +noticia.getTitulo()+"','"+noticia.getDescripcion()+"',"+noticia.getCategoriaId()+" ,'"+noticia.getFotoUrl()+"','"+noticia.getContenido()+"')";
+
+            resultado=stm.executeUpdate(query);
+        } catch(Exception e) {
+            int x=1;
+
+        }
+        return resultado;
+
+    }
+
+    public int ActualizarEvento(Evento evento){
+        int resultado=0;
+
+        try {
+            Statement stm = _cn.createStatement();
+            String query ="Call UpdateEvento(" +evento.getEventoId()+",'"
+            +evento.getTitulo()+"','"+evento.getDescripcion()+"',"+evento.getCategoriaId()+" ,'"+evento.getFotoUrl()+"')";;
+
+            resultado=stm.executeUpdate(query);
+
+        } catch(Exception e) {
+            int x=1;
+
+        }
+        return resultado;
+
+    }
+
+
+
+    
 
     
 } 

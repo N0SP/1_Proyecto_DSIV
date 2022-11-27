@@ -1,0 +1,10 @@
+PUT http://localhost:8080/evento
+Content-Type: application/json
+
+{
+    "eventoId": 1,
+    "titulo": "Fiba eurobasket",
+    "descripcion": "El mejor partido de baloncesto con los mejores equipos,",
+    "categoriaId": 3,
+    "fotoUrl":"https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/EuroBasket_2022.svg/1200px-EuroBasket_2022.svg.png"
+}

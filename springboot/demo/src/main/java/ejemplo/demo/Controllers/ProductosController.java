@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ejemplo.demo.Models.Productos;
 import ejemplo.demo.Models.Viajes;
-import ejemplo.demo.Models.Evento;
 import ejemplo.demo.Models.Noticia;
+import ejemplo.demo.Models.Categoria;
 import ejemplo.demo.Services.Productosdb;
 
 @RestController
@@ -43,12 +43,17 @@ public class ProductosController {
         return new Productosdb().ObtenerViajes();
     }
 
-    @GetMapping("noticias/all")
-    public List<Noticia> ObtenerTodosNoticias() {
-        return new Productosdb().ObtenerNoticias();
+
+  
+
+    @GetMapping("categorias/all")
+    public List<Categoria> ObtenerTodosCategorias() {
+        return new Productosdb().ObtenerCategorias();
     }
-    @GetMapping("eventos/all")
-    public List<Evento> ObtenerTodosEventos() {
-        return new Productosdb().ObtenerEventos();
-    }
+
+    
+
+    
 }
+
+
