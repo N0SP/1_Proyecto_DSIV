@@ -1,11 +1,10 @@
 body{
     margin: 0px;
     min-width: 600px;
-    background: #A7DFEC;
+    background: linear-gradient(white, hsl(176, 100%, 88%),#c4fcf8,#dbfffd);
 }
 
 nav{
-    background: #A7DFEC;
     text-align: right;
 }
 
@@ -28,7 +27,6 @@ nav img{
 }
 
 .principal{
-    background: #415A8B;
     display: flex;
     justify-content: center;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

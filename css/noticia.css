@@ -3,9 +3,9 @@
 
 
 body {
-    width:100vw;
+    width:99%;
     font-family: 'Poppins', sans-serif;
-    background-color:#FFFFFF;
+    background: linear-gradient(white, hsl(176, 100%, 88%),#c4fcf8,#dbfffd);
     font-size: 12px;
   
 
@@ -29,7 +29,7 @@ body {
 }
 
 .noticia {
-    background-color:#E3EDFF;
+    background-color:#b8fffb;
     margin: 0% 14%;
     margin-top: 4%;
     padding: 2% 0%;
@@ -86,7 +86,7 @@ button {
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    background-color: #BBC9E4;
+    background-color: #b8fffb;
     padding:4%;
     margin: 0% 6%;
     margin-bottom:3%;

@@ -7,7 +7,7 @@
     }
 
     body {
-    width:100vw;
+    width:100%;
     font-family: 'Poppins', sans-serif;
         background-image: linear-gradient(white, hsl(176, 100%, 88%),#c4fcf8,#dbfffd);
       
