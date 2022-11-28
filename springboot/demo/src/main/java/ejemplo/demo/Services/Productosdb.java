@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ejemplo.demo.Models.Productos;
-import ejemplo.demo.Models.Viajes;
 import ejemplo.demo.Models.Noticia;
 import ejemplo.demo.Models.Evento;
 import ejemplo.demo.Models.Categoria;
@@ -96,33 +95,6 @@ public class Productosdb {
 
     }
 
-
-    public List<Viajes> ObtenerViajes() {
-        try {
-           Statement stmt = _cn.createStatement();
-            String query = "SELECT * FROM viaje";
-
-            List<Viajes> viajes = new ArrayList<>();
-            ResultSet result = stmt.executeQuery(query);
-            while (result.next()) {
-                Viajes viaje = new Viajes(
-                    result.getInt("viajeID"),
-                    result.getString("titulo"),
-                    result.getString("descripcion"),
-                    result.getString("urlimage")
-        );
-                viajes.add(viaje);
-             }
-             result.close();
-             stmt.close();
-             return viajes;
-
-
-        } catch (Exception e) {
-            int x= 1;
-        }
-        return null;
-    }
 
     public List<Noticia> ObtenerNoticias() {
         try {

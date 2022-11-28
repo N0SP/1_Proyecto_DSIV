@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import ejemplo.demo.Models.Productos;
-import ejemplo.demo.Models.Viajes;
 import ejemplo.demo.Models.Noticia;
 import ejemplo.demo.Models.Categoria;
 import ejemplo.demo.Services.Productosdb;
@@ -37,14 +36,6 @@ public class ProductosController {
     public int ActualizarProductos(@RequestBody Productos producto) {
         return new Productosdb().ActualizarProductos(producto);
     }
-
-    @GetMapping("viajes/all")
-    public List<Viajes> ObtenerTodosViajes() {
-        return new Productosdb().ObtenerViajes();
-    }
-
-
-  
 
     @GetMapping("categorias/all")
     public List<Categoria> ObtenerTodosCategorias() {

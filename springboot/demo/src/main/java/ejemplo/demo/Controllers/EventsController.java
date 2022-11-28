@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import ejemplo.demo.Models.Productos;
-import ejemplo.demo.Models.Viajes;
 import ejemplo.demo.Models.Evento;
 import ejemplo.demo.Models.Noticia;
 import ejemplo.demo.Models.Categoria;

@@ -3,7 +3,7 @@
 body {
     width: 100%;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(white, hsl(176, 100%, 88%),#c4fcf8,#dbfffd);
+    background: radial-gradient(circle, rgba(196,252,248,1) 0%, rgba(219,255,253,1) 43%, rgba(0,232,255,0.5886729691876751) 100%);
     margin:0%;
 }
 input[type=email]{
