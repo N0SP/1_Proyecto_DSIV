@@ -7,10 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ejemplo.demo.Models.Productos;
+import ejemplo.demo.Models.Reporte;
 import ejemplo.demo.Models.Viajes;
 import ejemplo.demo.Models.Noticia;
 import ejemplo.demo.Models.Evento;
 import ejemplo.demo.Models.Categoria;
+import java.util.*;
 
 
 public class Productosdb {
@@ -259,6 +261,7 @@ public class Productosdb {
         try {
             Statement stmt = _cn.createStatement();
             String query = "Call DeleteNoticia("+noticiaId+")";
+            
             return stmt.executeUpdate(query);
         } catch(Exception e) {
             int x=1;
@@ -272,11 +275,17 @@ public class Productosdb {
         int resultado=0;
 
         try {
+            Date fetcha = new Date();
             Statement stm = _cn.createStatement();
             String query ="Call InsertarEvento('"
             +evento.getTitulo()+"','"+evento.getDescripcion()+"',"+evento.getCategoriaId()+" ,'"+evento.getFotoUrl()+"')";
 
+            Reporte reporte = new Reporte("Añadir evento", fetcha.toString(), evento.getTitulo(), evento.getCategoriaId(), evento.getCategoriaNombre());
+            String query2= "Call InsertReporte('"
+            +reporte.getAccion()+"','"+reporte.getDate()+"','"+evento.getTitulo()+"' ,"+evento.getCategoriaId()+")";
+
             resultado=stm.executeUpdate(query);
+            resultado=stm.executeUpdate(query2);
         } catch(Exception e) {
             int x=1;
 
@@ -288,14 +297,21 @@ public class Productosdb {
     public int GuardarNoticia(Noticia noticia){
         int resultado=0;
 
-        try {
+         try {
+           Date fetcha = new Date();
+           
             Statement stm = _cn.createStatement();
             String query ="Call InsertarNoticia('"
             +noticia.getTitulo()+"','"+noticia.getDescripcion()+"',"+noticia.getCategoriaId()+" ,'"+noticia.getFotoUrl()+"','"+noticia.getContenido()+"')";
-
+           Reporte reporte = new Reporte("Añadir noticia", fetcha.toString(), noticia.getTitulo(), noticia.getCategoriaId(), noticia.getCategoriaNombre());
+            String query2= "Call InsertReporte('"
+            +reporte.getAccion()+"','"+reporte.getDate()+"','"+noticia.getTitulo()+"' ,"+noticia.getCategoriaId()+")";
+        
+         
             resultado=stm.executeUpdate(query);
+           resultado=stm.executeUpdate(query2);
         } catch(Exception e) {
-            int x=1;
+             int x=1;
 
         }
         return resultado;
@@ -306,11 +322,16 @@ public class Productosdb {
         int resultado=0;
 
         try {
+            Date fetcha = new Date();
             Statement stm = _cn.createStatement();
             String query ="Call UpdateEvento(" +evento.getEventoId()+",'"
-            +evento.getTitulo()+"','"+evento.getDescripcion()+"',"+evento.getCategoriaId()+" ,'"+evento.getFotoUrl()+"')";;
+            +evento.getTitulo()+"','"+evento.getDescripcion()+"',"+evento.getCategoriaId()+" ,'"+evento.getFotoUrl()+"')";
+            Reporte reporte = new Reporte("Actualizar evento", fetcha.toString(), evento.getTitulo(), evento.getCategoriaId(), evento.getCategoriaNombre());
+            String query2= "Call InsertReporte('"
+            +reporte.getAccion()+"','"+reporte.getDate()+"','"+evento.getTitulo()+"' ,"+evento.getCategoriaId()+")";
 
             resultado=stm.executeUpdate(query);
+            resultado=stm.executeUpdate(query2);
 
         } catch(Exception e) {
             int x=1;
@@ -319,6 +340,36 @@ public class Productosdb {
         return resultado;
 
     }
+
+    public List<Reporte> ObtenerReportes() {
+        try {
+           Statement stmt = _cn.createStatement();
+            String query = "SELECT reporteID,accion,date,titulo,categoria.categoriaID,nombre FROM categoria JOIN reporte on categoria.categoriaID=reporte.categoriaID";
+            List<Reporte> reportes = new ArrayList<>();
+            ResultSet result = stmt.executeQuery(query);
+            while (result.next()) {
+                Reporte reporte = new Reporte(
+                    result.getString("accion"),
+                   result.getString("date"),
+                   result.getString("titulo"),
+                   result.getInt("categoriaID"),
+                   result.getString("nombre")
+                    );
+                reportes.add(reporte);
+             }
+
+             result.close();
+             stmt.close();
+             return reportes;
+
+
+        } catch (Exception e) {
+            int x= 1;
+        }
+        return null;
+    }
+
+    
 
 
 
