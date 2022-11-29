@@ -8,7 +8,7 @@
     
     <title>Panel Administrativo</title>
 </head>
-<body>
+<body onload="start()">
     <header>
         <section class="title">
             <h1>Panel Administrativo</h1>
@@ -36,10 +36,10 @@
         <li>
             <a href="noticias.html">Ver Noticias</a>
         </li>
-        <section class="deportes">
-            <h2>Deportes</h2>
+        <section class="categorias">
+            <h2>Categorias</h2>
         <li>
-            <a href="deportes.html">Ver Deportes</a>
+            <a href="categorias.html">Ver Categorias</a>
         </li>
         </section>
         <section class="eventos">
@@ -67,31 +67,15 @@
             <table class="Tablareport">
                 <thead>
                   <tr>
-                    <th>Actor</th>
+                    <th>ID</th>
                     <th>Titulo</th>
-                    <th>Descripcon</th>
+                    <th>Descripcion</th>
+                    <th>Categoria</th>
                     <th>Imagen</th>
                     <th>Accion</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>Row 1, Cell 2</td>
-                    <td>Row 1, Cell 3</td>
-                    <td>Row 1, Cell 4</td>
-                    <td>Row 1, Cell 5</td>
-                    <td>
-                    <div class="botones">
-                        <div class="boton-modal">
-                            <label for="btn-modal-edit"><i class="material-icons-edit" data-toggle="tooltip" title="Edit">&#xE254;</i></label>
-                        </div>
-                        <div class="boton-modal">
-                            <label for="btn-modal-delete"><i class="material-icons-delete" data-toggle="tooltip" title="Delete">&#xE872;</i></label>
-                        </div>
-                    </div>
-                    </td>
-                  </tr>
-                  </tr>
+                <tbody id="eventosadm">
                 </tbody>
               </table>
         </section>
@@ -104,25 +88,31 @@
             <label for="btn-modal-create">Cerrar</label>
         </div>
         <h2>Crear Evento</h2>
-        <form action="deportes.html" method="POST">
-            <div class="form-group">
-                <label for="actor">Actor</label>
-                <input type="text" name="actor" id="actor" class="form-control" required>
-            </div>
+        <form action="#">
             <div class="form-group">
                 <label for="titulo">Titulo</label>
                 <input type="text" name="titulo" id="titulo" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="descripcion">Descripcion</label>
+                <label for="descripcion">Descripción</label>
                 <input type="text" name="descripcion" id="descripcion" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="imagen">Imagen</label>
-                <input type="file" name="imagen" id="imagen" class="form-control" required>
+                <label for="categoria">Categoria</label>
+                <select name="categoria" id="categoria" class="form-control" required>
+                    <option value="1">Fútbol</option>
+                    <option value="2">Béisbal</option>
+                    <option value="3">Baloncesto</option>
+                    <option value="4">Tenis</option>
+                    <option value="5">Natación</option>
+                    <option value="6">Voleibol</option>
             </div>
             <div class="form-group">
-                <input type="submit" value="Crear" class="btn btn-primary">
+                <label for="imagen">Imagen Url</label>
+                <input type="text" name="url" id="url" class="form-control" placeholder="Url de la Imagen" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" onclick="GuardarEvento()" value="Crear" class="btn btn-primary">
             </div>
         </form>
     </div>
@@ -135,44 +125,38 @@
             <label for="btn-modal-edit">Cerrar</label>
         </div>
         <h2>Editar Evento</h2>
-        <form action="deportes.html" method="POST">
-            <div class="form-group">
-                <label for="actor">Actor</label>
-                <input type="text" name="actor" id="actor" class="form-control" required>
-            </div>
+        <form action="#">
+
             <div class="form-group">
                 <label for="titulo">Titulo</label>
-                <input type="text" name="titulo" id="titulo" class="form-control" required>
+                <input type="text" name="titulo" id="tituloedit" class="form-control" required>
+                <input type="hidden" name="eventoid" id="eventoid">
             </div>
             <div class="form-group">
                 <label for="descripcion">Descripcion</label>
-                <input type="text" name="descripcion" id="descripcion" class="form-control" required>
+                <input type="text" name="descripcion" id="descripcionedit" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="categoria">Categoria</label>
+                <select name="categoria" id="categoriaedit" class="form-control" required>
+                    <option value="1">Fútbol</option>
+                    <option value="2">Béisbal</option>
+                    <option value="3">Baloncesto</option>
+                    <option value="4">Tenis</option>
+                    <option value="5">Natación</option>
+                    <option value="6">Voleibol</option>
             </div>
             <div class="form-group">
                 <label for="imagen">Imagen</label>
-                <input type="file" name="imagen" id="imagen" class="form-control" required>
+                <input type="text" name="url" id="urledit" class="form-control" placeholder="Url de la Imagen" required>
             </div>
             <div class="form-group">
-                <input type="submit" value="Editar" class="btn btn-primary">
+                <input type="submit" onclick="EditarEventos()" value="Editar" class="btn btn-primary">
             </div>
         </form>
     </div>
 </div>
 <!--Ventana Modal Delete-->
-<input type="checkbox" id="btn-modal-delete">
-<div class="container-modal-delete">
-    <div class="content-modal">
-        <h2>Eliminar Evento</h2>
-        <p>¿Seguro que quieres eliminiar El Evento Lorem Ipsum?</p>
-        <div class="botones">
-        <div class="btn-enviar">
-            <input type="submit" value="Eliminar" class="btn btn-primary">
-        </div>
-        <div class="btn-cerrar">
-        <label for="btn-modal-delete">Cancelar</label>
-        </div>
-    </div>
-</div>
-
+<script src="../script/crudpanel.js"></script>
 </body>
 </html>
