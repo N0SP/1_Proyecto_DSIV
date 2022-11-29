@@ -2,7 +2,7 @@ POST http://localhost:8080/evento
 Content-Type: application/json
 
 {
-    "titulo": "Voleibol mundial viene otro año con mas de 25 paises",
+    "titulo": "This is a test for adding new evento",
     "descripcion": "Los boletos estan en venta desde 1 de diciembre",
     "categoriaId": 6,
     "fotoUrl": "https://medias.paris2024.org/uploads/2020/11/Volley-ball.jpeg?x-oss-process=image/resize,w_2508,h_1672,m_lfit/format,jpeg"
