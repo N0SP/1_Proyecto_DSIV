@@ -38,5 +38,10 @@ public class NoticiasController {
     public int InsertarEvento(@RequestBody Noticia noticia){
         return new Productosdb().GuardarNoticia(noticia);
     }
+
+    @PutMapping("/noticia")
+    public int ActualizarNoticia(@RequestBody Noticia noticia){
+        return new Productosdb().ActualizarNoticias(noticia);
+    }
   
 }

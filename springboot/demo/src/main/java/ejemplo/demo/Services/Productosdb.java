@@ -217,6 +217,59 @@ public class Productosdb {
     }
 
 
+    public int ActualizarNoticias(Noticia noticia){
+        int resultado=0;
+
+         try {
+           Date fetcha = new Date(resultado);
+           
+            Statement stm = _cn.createStatement();
+            String query ="Call UpdateNoticia("
+            +noticia.getNoticiaId()+",'"
+            +noticia.getTitulo()+"','"
+            +noticia.getDescripcion()+"',"
+            +noticia.getCategoriaId()+" ,'"
+            +noticia.getFotoUrl()+"','"
+            +noticia.getContenido()+"')";
+           Reporte reporte = new Reporte("Actualiza noticia", fetcha.toString(), noticia.getTitulo(), noticia.getCategoriaId(), noticia.getCategoriaNombre());
+            String query2= "Call InsertReporte('"
+            +reporte.getAccion()+"','"+reporte.getDate()+"','"+noticia.getTitulo()+"' ,"+noticia.getCategoriaId()+")";
+        
+         
+            resultado=stm.executeUpdate(query);
+           resultado=stm.executeUpdate(query2);
+        } catch(Exception e) {
+             int x=1;
+
+        }
+        return resultado;
+
+    }
+  
+      public int GuardarNoticia(Noticia noticia){
+        int resultado=0;
+
+         try {
+           Date fetcha = new Date(resultado);
+           
+            Statement stm = _cn.createStatement();
+            String query ="Call InsertarNoticia('"
+            +noticia.getTitulo()+"','"+noticia.getDescripcion()+"',"+noticia.getCategoriaId()+" ,'"+noticia.getFotoUrl()+"','"+noticia.getContenido()+"')";
+           Reporte reporte = new Reporte("Añadir noticia", fetcha.toString(), noticia.getTitulo(), noticia.getCategoriaId(), noticia.getCategoriaNombre());
+            String query2= "Call InsertReporte('"
+            +reporte.getAccion()+"','"+reporte.getDate()+"','"+noticia.getTitulo()+"' ,"+noticia.getCategoriaId()+")";
+        
+         
+            resultado=stm.executeUpdate(query);
+           resultado=stm.executeUpdate(query2);
+        } catch(Exception e) {
+             int x=1;
+
+        }
+        return resultado;
+
+    }
+
     public int ActualizarEvento(Evento evento){
         int resultado=0;
 
