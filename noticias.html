@@ -9,25 +9,17 @@
     <link rel="stylesheet" href="css/noticias.css">
     <link rel="stylesheet" href="css/footer.css">
     <title>Document</title>
+    <script>
+        
+function Start() {
+    setNavbarNoticias();
+    ObtenerNoticias();
+  ObtenerCategorias();
+}
+    </script>
 </head>
 <body onload="Start()">
-    <nav>
-            
-        
-        <li>
-        <img class="logo"src="img/logo.png" alt="">
-        </li>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="about.html">Sobre nosotros</a></li>
-            <li><a href="eventos.html">Eventos</a></li>
-            <li><a href="noticias.html" class="main">Noticias</a></li>
-            <li><a href="">Contactanos</a></li>
-            <li class="itemseperate"><a href="login.html">Iniciar seción</a></li>
-            <li><a href="registro.html">Registrarse</a></li>
-        <li>
-            <a href="busqueda.html"><img src="img/search.png" class="search" alt=""></a> 
-        </li>
-   
+    <nav id="navbar">
     </nav>
 
     <h1 class="title">Últimas noticias</h1>
@@ -57,5 +49,6 @@
 
 </footer>
 <script src="script/noticias.js"></script>
+<script src="script/checkLogin.js"></script>
 </body>
 </html>

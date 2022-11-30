@@ -8,27 +8,18 @@
     <link rel="stylesheet" href="css/eventos.css">
     <link rel="stylesheet" href="css/footer.css">
     <title>Document</title>
+    <script>
+        function start(){
+            
+        ObtenerCategorias();
+        ObtenerEventos();
+        setNavbarEventos();
+        }
+    </script>
 </head>
 <body onload="start()">
-    <nav>
-  
-        <li>
-        <img class="logo"src="img/logo.png" alt="">
-        </li>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="about.html">Sobre nosotros</a></li>
-            <li><a href="eventos.html"class="main">Eventos</a></li>
-            <li><a href="noticias.html">Noticias</a></li>
-            <li><a href="">Contactanos</a></li>
-            <li class="itemseperate"><a href="login.html">Iniciar seción</a></li>
-            <li><a href="registro.html">Registrarse</a></li>
-    <li>
-        <a href="busqueda.html"><img src="img/search.png" class="search" alt=""></a> 
-    </li>
-   
-
-
-</nav>
+    <nav id ="navbar">
+    </nav>
     <h1 class="title">Nuestros eventos</h1>
 
     <div id="categorias">
@@ -53,6 +44,7 @@
 </footer>
 
 <script src="script/eventos.js"></script>
+<script src="script/checkLogin.js"></script>
 
 </body>
 </html>

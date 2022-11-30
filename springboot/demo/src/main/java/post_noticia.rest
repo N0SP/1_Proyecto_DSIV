@@ -2,9 +2,9 @@ POST http://localhost:8080/noticia
 Content-Type: application/json
 
 {
-    "titulo": "This is a test for adding new noticia",
+    "titulo": "TEEST2",
     "descripcion": "Argentina ganó Mexico con el resultado 2-0",
     "categoriaId": 1,
-    "fotoUrl": "https://medias.paris2024.org/uploads/2020/11/Volley-ball.jpeg?x-oss-process=image/resize,w_2508,h_1672,m_lfit/format,jpeg",
+    "fotoUrl": "foto",
     "contenido": "La selección argentina ha conseguido una importantísima victoria ante México para seguir con plenas opciones de clasificarse a los octavos de final del Mundial de Qatar 2022. El partido era un duelo a vida o muerte para la albiceleste, que logró imponerse gracias a los goles de Messi y Enzo Fernández en la segunda parte. El equipo del Tata Martino vendió cara su piel con una presión muy alta al inicio del partido, pero acabó entregado en el segundo tiempo ante la calidad de su rival. Argentina se jugará la clasificación ante Polonia en la última jornada, y México, aún con opciones, necesitará una carambola en la que será obligatorio que venzan a Arabia Saudí. Tras el partido, Messi ha declarado: “Sabíamos que hoy había que ganar, que arrancaba otro Mundial para nosotros, y lo supimos hacer”."
 } 
