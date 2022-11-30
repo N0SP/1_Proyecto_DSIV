@@ -8,7 +8,7 @@
     
     <title>Panel Administrativo</title>
 </head>
-<body>
+<body onload="start()">
     <header>
         <section class="title">
             <h1>Panel Administrativo</h1>
@@ -67,31 +67,12 @@
             <table class="Tablareport">
                 <thead>
                   <tr>
-                    <th>Actor</th>
-                    <th>Titulo</th>
-                    <th>Descripcon</th>
-                    <th>Imagen</th>
-                    <th>Accion</th>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Acción</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>Row 1, Cell 2</td>
-                    <td>Row 1, Cell 3</td>
-                    <td>Row 1, Cell 4</td>
-                    <td>Row 1, Cell 5</td>
-                    <td>
-                    <div class="botones">
-                        <div class="boton-modal">
-                            <label for="btn-modal-edit"><i class="material-icons-edit" data-toggle="tooltip" title="Edit">&#xE254;</i></label>
-                        </div>
-                        <div class="boton-modal">
-                            <label for="btn-modal-delete"><i class="material-icons-delete" data-toggle="tooltip" title="Delete">&#xE872;</i></label>
-                        </div>
-                    </div>
-                    </td>
-                  </tr>
-                  </tr>
+                <tbody id="categoriasadm">
                 </tbody>
               </table>
         </section>
@@ -173,6 +154,8 @@
         </div>
     </div>
 </div>
+</div>
 <script src="../script/crudpanel.js"></script>
 </body>
+
 </html>
