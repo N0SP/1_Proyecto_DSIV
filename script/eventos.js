@@ -39,6 +39,7 @@ function MapearPlantilla(evento){
             
 }
 
+
 //category buttons
 
 function ObtenerCategorias(){

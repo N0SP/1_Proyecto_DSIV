@@ -1,20 +1,10 @@
 package ejemplo.demo.Services;
+import java.sql.*;
+import java.sql.Date;
 
-import java.sql.Statement;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
-
-import ejemplo.demo.Models.Productos;
-import ejemplo.demo.Models.Reporte;
-import ejemplo.demo.Models.Usuario;
-import ejemplo.demo.Models.Viajes;
-import ejemplo.demo.Models.Noticia;
-import ejemplo.demo.Models.Evento;
-import ejemplo.demo.Models.Categoria;
-
+import ejemplo.demo.Models.*;
 import java.util.*;
+
 
 
 public class Productosdb {
@@ -137,7 +127,7 @@ public class Productosdb {
         int resultado=0;
 
          try {
-           Date fetcha = new Date();
+           Date fetcha = new Date(resultado);
            
             Statement stm = _cn.createStatement();
             String query ="Call InsertarNoticia('"
@@ -207,7 +197,7 @@ public class Productosdb {
         int resultado=0;
 
         try {
-            Date fetcha = new Date();
+            Date fetcha = new Date(resultado);
             Statement stm = _cn.createStatement();
             String query ="Call InsertarEvento('"
             +evento.getTitulo()+"','"+evento.getDescripcion()+"',"+evento.getCategoriaId()+" ,'"+evento.getFotoUrl()+"')";
@@ -231,7 +221,7 @@ public class Productosdb {
         int resultado=0;
 
         try {
-            Date fetcha = new Date();
+            Date fetcha = new Date(resultado);
             Statement stm = _cn.createStatement();
             String query ="Call UpdateEvento(" +evento.getEventoId()+",'"
             +evento.getTitulo()+"','"+evento.getDescripcion()+"',"+evento.getCategoriaId()+" ,'"+evento.getFotoUrl()+"')";
