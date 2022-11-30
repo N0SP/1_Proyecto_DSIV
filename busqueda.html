@@ -9,28 +9,10 @@
     <link rel="stylesheet" href="css/footer.css">
     <title>Document</title>
 </head>
-<body>
+<body onload="setNavbarBusqueda()">
     <header>
-        <nav>
-  
-            <li>
-            <img class="logo"src="img/logo.png" alt="">
-            </li>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="about.html">Sobre nosotros</a></li>
-
-                <li><a href="eventos.html">Eventos</a></li>
-
-                
-
-                <li><a href="noticias.html">Noticias</a></li>
-                <li><a href="">Contactanos</a></li>
-                <li class="itemseperate"><a href="login.html">Iniciar seción</a></li>
-                <li><a href="registro.html">Registrarse</a></li>
-        <li>
-            <a href="busqueda.html"><img src="img/search.png" class="search" alt=""></a> 
-        </li>
-    </nav>
+        <nav id ="navbar">
+        </nav>
         <h1>¿Que estas buscando?</h1>
         <input type="text" placeholder="Lorem ipsum..." id="textbox">
         <button onclick="filter()"> Busca</button>
@@ -56,37 +38,11 @@
 
 
         <div class="upperSection" id="eventos">
-            <!--<div>
-                <div class="fiba"><img src="img/fiba.png" alt=""></div>
-                <div><h3>Fiba eurobasket</h3><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p></div>
-            </div>
-
-            <div>
-                <div class="fiba"><img src="img/fiba.png" alt=""></div>
-                <div><h3>Fiba eurobasket</h3><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p></div>
-            </div>
-
-            <div>
-                <div class="fiba"><img src="img/fiba.png" alt=""></div>
-                <div><h3>Fiba eurobasket</h3><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p></div>
-            </div>-->
         </div>
         
         <div id="resultN"></div>
 
-        <div class="lowerSection" id="noticias">
-            <!--<div>
-                <div><h3>Beisbal</h3><h4>Los Yankees Ganan la liga</h4></div>
-                <div><img src="img/yankees.jpeg" alt=""></div>
-                <div><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p></div>
-            </div>
-
-            <div>
-                <div><h3>Beisbal</h3><h4>Los Yankees Ganan la liga</h4></div>
-                <div><img src="img/yankees.jpeg" alt=""></div>
-                <div><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p></div>
-            </div>-->
-            
+        <div class="lowerSection" id="noticias">        
         </div>
     </div>
 </section>
@@ -105,5 +61,6 @@
 
     </footer>
     <script src="script/busqueda.js"></script>
+    <script src="script/checkLogin.js"></script>
 </body>
 </html>

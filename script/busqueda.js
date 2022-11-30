@@ -10,20 +10,26 @@ function filter() {
 
 function filterEvents() {
     var filter= document.getElementById('textbox').value.toLowerCase();
+
+    if (filter!= "") {
     fetch('http://localhost:8080/eventos/all').
     then(resultado=> {
         resultado.json().then(json=>{
             eventos= json;
-            var filteredEventos= eventos.filter(evento=>evento.titulo.toLowerCase().includes(filter));
+            var filteredEventos= eventos.filter(evento=>evento.titulo.toLowerCase().includes(filter) || evento.categoriaNombre.toLowerCase().includes(filter));
             MapearEventos(filteredEventos, filter);
         
         })
 
     });
 
-   
+}
 
 }
+
+   
+
+
 
 function MapearEventos(array, filter) {
     let contenedor=document.getElementById('eventos');
@@ -51,19 +57,20 @@ function MapearPlantillaEvento(evento){
 
 
 function filterNoticias() {
-    var filter= document.getElementById('textbox').value.toLowerCase();
+    var filter=document.getElementById('textbox').value.toLowerCase();
+    if (filter!= "") {
     fetch('http://localhost:8080/noticias/all').
     then(resultado=> {
         resultado.json().then(json=>{
            noticias= json;
-            var filteredNoticias= noticias.filter(noticia=>noticia.titulo.toLowerCase().includes(filter));
+            var filteredNoticias= noticias.filter(noticia=>noticia.titulo.toLowerCase().includes(filter) || noticia.categoriaNombre.toLowerCase().includes(filter));
             MapearNoticias(filteredNoticias, filter);
         
         })
 
     });
 
-   
+}
 
 }
 
@@ -72,7 +79,7 @@ function MapearNoticias(array, filter) {
     contenedor.innerHTML="";
     let contenedor2=document.getElementById('resultN');
     console.log(contenedor2);
-    contenedor2.innerHTML=` <h2 class="noticiatitle"> ${array.length}  Noticia(s) referentes a "${filter}</h2>`
+    contenedor2.innerHTML=` <h2 class="noticiatitle"> ${array.length}  Noticia(s) referentes a "${filter}"</h2>`
 
 
     for (let i=0; i< array.length; i++) {

@@ -89,9 +89,3 @@ function showEvents(categoriaID){
 
 
 
-
-function start() {
-    ObtenerCategorias();
-    ObtenerEventos();
-
-}

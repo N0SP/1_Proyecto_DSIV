@@ -29,11 +29,47 @@ function MapearPlantilla(noticia){
                     <div><h3>${noticia.categoriaNombre}</h3><h4>${noticia.titulo}</h4></div>
                     <div><img src="${noticia.fotoUrl}" alt=""></div>
                     <div><p class="description">${noticia.descripcion}</p></div>
-                    <div><a href="noticia.html"><button class="info" onclick="setId(${noticia.noticiaId})">Leer mas</button></a></div>
+                    <div><a href="noticia.html"><button class="info" onclick="noticia(${noticia.noticiaId})">Leer mas</button></a></div>
                 </div>`
 
             
 }
+
+function noticia(id) {
+    localStorage.setItem('noticiaId', id);
+    window.location.href="noticia.html";
+ 
+}
+
+
+function individualNoticia() {
+    let noticiaId=localStorage.getItem('noticiaId')
+    fetch(`http://localhost:8080/noticia/${noticiaId}`).then(resultado=> {
+        resultado.json().then(json=>{
+            noticia= json;
+            showNoticia(noticia)
+        })
+   
+    });
+
+}
+
+function showNoticia(noticia) {
+        let contenedor=document.getElementById('news');
+        contenedor.innerHTML=
+        ` <h1>${noticia.titulo}</h1>
+        <div>
+            <div>
+                <img src="${noticia.fotoUrl}" alt="">
+            </div>
+            <div>
+            <p>${noticia.contenido}</p>
+            </div>
+        
+        </div>`
+
+}
+
 
 function ObtenerCategorias(){
     fetch('http://localhost:8080/categorias/all').
@@ -87,32 +123,7 @@ function setId(newId) {
     console.log(id);
 }
 
-function individualNoticia() {
-    console.log(id);
-let noticia=null;
-    fetch(`http://localhost:8080/noticia/${id}`).then(resultado=> {
-        resultado.json().then(json=>{
-            noticia= json;
-        })
-        let contenedor=document.getElementById('noticia');
-        contenedor.innerHTML=
-  ` <h1>${noticia.titulo}</h1>
-        <div>
-            <div>
-                <img src="${noticia.fotoUrl}" alt="">
-             </div>
-             <div>
-            <p>${noticia.contenido}</p>
-            </div>
-           
-        </div>`
-    });
-
-}
 
 
 
-function Start() {
-    ObtenerNoticias();
-  ObtenerCategorias();
-}
+
