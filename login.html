@@ -24,10 +24,12 @@
         <section class="formu">
             <h2>Iniciar Sesión</h2>
             <form action="" method="post">
-                <input type="text" class="datos" id="" placeholder="Nombre de Usuario" required><br>
-                <input type="password" class="datos" placeholder="Contraseña" required><br>
+                <input type="text" class="datos" id="correo" placeholder="Correo electronico" required><br>
+                <input type="password" class="datos" id="contrasena" placeholder="Contraseña" required><br>
                
-                <input type="submit" onClick="myFunction()"class="boton" value="Entrar">
+                <input type="button" onclick= "findUser()" class="boton" value="Entrar">
+
+                <h3 id="errorlogin"></h3>
               
             </form>
             <p>¿Olvidaste tu contraseña? <a href="recuperar.html">¡Hac Click Aquí!</a></p>
@@ -37,5 +39,6 @@
             <img src="img/atletas.png" alt="">
         </section>
     </section>
+    <script src="script/login.js"></script>
 </body>
 </html>

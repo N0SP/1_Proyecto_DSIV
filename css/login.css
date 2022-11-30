@@ -43,10 +43,13 @@ nav img{
     padding-bottom: 1.5%;
     text-align: center;
     width: 450px;
-    height: 400px;
+
     min-width: 350px;
 }
 
+#errorlogin {
+    color:red;
+}
 .formu h2{
     margin-top: 0;
     padding-top: 10%;
