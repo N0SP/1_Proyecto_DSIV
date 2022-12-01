@@ -1,0 +1,9 @@
+PUT http://localhost:8080/usuario
+Content-Type: application/json
+
+{
+    "userId": 1,
+    "nombre": "Ruusu",
+    "correo": "elena.rima1@gmail.com",
+    "contrasena": "test"
+}

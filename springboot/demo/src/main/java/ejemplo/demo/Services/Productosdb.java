@@ -1,9 +1,11 @@
 package ejemplo.demo.Services;
 import java.sql.*;
-import java.sql.Date;
+
 
 import ejemplo.demo.Models.*;
 import java.util.*;
+import java.util.Date;
+
 
 
 
@@ -108,12 +110,23 @@ public class Productosdb {
 
     public int EliminarNoticias(int noticiaId) {
         int resultado = 0;
+        Date fetcha = new Date();
 
         try {
             Statement stmt = _cn.createStatement();
             String query = "Call DeleteNoticia("+noticiaId+")";
-            
+
+            String query2="SELECT noticiaID,titulo,categoria.categoriaID ,nombre FROM categoria JOIN noticia on categoria.categoriaID=noticia.categoriaID WHERE noticiaID="+noticiaId+"";
+            ResultSet result = stmt.executeQuery(query2);
+            if (result.next()) {
+            Reporte reporte = new Reporte("Eliminar noticia", fetcha.toString(), result.getString("titulo"), result.getInt("categoriaID"), result.getString("nombre"));
+            String query3="Call InsertReporte('"
+            +reporte.getAccion()+"','"+reporte.getDate()+"','"+reporte.getTitulo()+"' ,"+reporte.getCategoriaId()+")";
+
+            resultado=stmt.executeUpdate(query3);
             return stmt.executeUpdate(query);
+            }
+            
         } catch(Exception e) {
             int x=1;
 
@@ -127,7 +140,7 @@ public class Productosdb {
         int resultado=0;
 
          try {
-           Date fetcha = new Date(resultado);
+           Date fetcha = new Date();
            
             Statement stm = _cn.createStatement();
             String query ="Call InsertarNoticia('"
@@ -178,11 +191,22 @@ public class Productosdb {
 
     public int EliminarEventos(int eventoId) {
         int resultado = 0;
+        Date fetcha= new Date();
 
         try {
             Statement stmt = _cn.createStatement();
             String query = "Call DeleteEvento("+eventoId+")";
+
+            String query2="SELECT eventoID,titulo,categoria.categoriaID , nombre FROM categoria JOIN evento on categoria.categoriaID=evento.categoriaID WHERE eventoID="+eventoId+"";
+            ResultSet result = stmt.executeQuery(query2);
+            if (result.next()) {
+            Reporte reporte = new Reporte("Eliminar evento", fetcha.toString(), result.getString("titulo"), result.getInt("categoriaID"), result.getString("nombre"));
+            String query3="Call InsertReporte('"
+            +reporte.getAccion()+"','"+reporte.getDate()+"','"+reporte.getTitulo()+"' ,"+reporte.getCategoriaId()+")";
+
+            resultado=stmt.executeUpdate(query3);
             return stmt.executeUpdate(query);
+            }
         } catch(Exception e) {
             int x=1;
 
@@ -197,7 +221,7 @@ public class Productosdb {
         int resultado=0;
 
         try {
-            Date fetcha = new Date(resultado);
+            Date fetcha = new Date();
             Statement stm = _cn.createStatement();
             String query ="Call InsertarEvento('"
             +evento.getTitulo()+"','"+evento.getDescripcion()+"',"+evento.getCategoriaId()+" ,'"+evento.getFotoUrl()+"')";
@@ -274,7 +298,7 @@ public class Productosdb {
         int resultado=0;
 
         try {
-            Date fetcha = new Date(resultado);
+            Date fetcha = new Date();
             Statement stm = _cn.createStatement();
             String query ="Call UpdateEvento(" +evento.getEventoId()+",'"
             +evento.getTitulo()+"','"+evento.getDescripcion()+"',"+evento.getCategoriaId()+" ,'"+evento.getFotoUrl()+"')";
@@ -374,6 +398,26 @@ public class Productosdb {
 
         }
         return resultado;
+
+    }
+
+    public int ActualizarUsuario(Usuario usuario){
+        int resultado=0;
+
+        try {
+            Statement stm = _cn.createStatement();
+            String query ="Call UpdateUsuario(" +usuario.getUserId()+",'"
+            +usuario.getNombre()+"','"+usuario.getCorreo()+"' ,'"+usuario.getContrasena()+"')";
+           
+            resultado=stm.executeUpdate(query);
+      
+
+        } catch(Exception e) {
+            int x=1;
+
+        }
+        return resultado;
+
 
     }
 

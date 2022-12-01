@@ -28,14 +28,15 @@
         <section class="formu">
             <h2>Registrate</h2>
             <form action="" method="post">
-                <input type="text" class="datos" placeholder="Nombre de Usuario" required><br>
-                <input type="email" class="datos" placeholder="Correo Electrónico" required>
-                <input type="password" class="datos" placeholder="Contraseña" required><br>
-                <input type="password" class="datos" placeholder="Repetir Contraseña" required>
-                <input type="submit" onClick="myFunction()"class="boton" value="Registrar">
+                <input type="text" id="nombre" class="datos" placeholder="Nombre de Usuario" required><br>
+                <input type="email" id="correo" class="datos" placeholder="Correo Electrónico" required>
+                <input type="password" id="contrasena" class="datos" placeholder="Contraseña" required><br>
+                <input type="password" id="contrasena2" class="datos" placeholder="Repetir Contraseña" required>
+                <input type="button" onclick="ObtenerUsuarios()" class="boton" value="Registrar">
             </form>
             <p>¿Ya tienes una cuenta? <a href="login.html">Inicia Sesión</a></p>
         </section>
     </section>
+    <script src="script/registro.js"></script>
 </body>
 </html>

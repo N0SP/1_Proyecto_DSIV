@@ -29,5 +29,10 @@ import ejemplo.demo.Services.Productosdb;
             return new Productosdb().GuardarUsuario(usuario);
         }
 
+        @PutMapping("/usuario")
+        public int ActualizarUsuario(@RequestBody Usuario usuario) {
+            return new Productosdb().ActualizarUsuario(usuario);
+        }
+
 
     }
