@@ -1,16 +1,8 @@
 package ejemplo.demo.Controllers;
 
-
 import java.util.List;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
 import ejemplo.demo.Models.Usuario;
 import ejemplo.demo.Services.Productosdb;
 
@@ -30,8 +22,13 @@ import ejemplo.demo.Services.Productosdb;
         }
 
         @PutMapping("/usuario")
-        public int ActualizarUsuario(@RequestBody Usuario usuario) {
+        public int ActualizarUsuario(@RequestBody Usuario usuario){
             return new Productosdb().ActualizarUsuario(usuario);
+        }
+
+        @DeleteMapping("/usuario/{userId}")
+        public int Delete(@PathVariable("userId") int userId){
+            return new Productosdb().EliminarUsuario(userId);
         }
 
 
