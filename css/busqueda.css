@@ -52,6 +52,12 @@ body {
      margin-top:2%;
  } 
 
+
+ .container img {
+    height: -webkit-fill-available;
+    width: auto;
+}
+
  .upperSection img, .lowerSection img {
      height:120px;
      width:60%;
@@ -61,6 +67,7 @@ body {
      width:90%;
      height:350px;
  }
+
 
  .sidebar {
      flex-basis:25%;

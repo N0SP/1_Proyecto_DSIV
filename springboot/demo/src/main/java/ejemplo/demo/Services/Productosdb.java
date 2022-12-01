@@ -101,7 +101,7 @@ public class Productosdb {
         }
         return resultado;
 
-    }
+}
     
     public int ActualizarNoticias(Noticia noticia){
         int resultado=0;
@@ -206,7 +206,7 @@ public class Productosdb {
         int resultado=0;
 
         try {
-        
+     
             Statement stm = _cn.createStatement();
             String query ="Call InsertarCategoria('"+categoria.getNombre()+"')";
             
@@ -220,7 +220,7 @@ public class Productosdb {
         return resultado;
 
     }
-    
+
 /* ------------------EVENTOS----------------- */
 
     public List<Evento> ObtenerEventos() {
@@ -440,4 +440,36 @@ public class Productosdb {
 
     }
     
+
+ 
+/* ------------------ABOUT US---------------------- */
+public List<About> ObtenerAboutUs() {
+    try {
+       Statement stmt = _cn.createStatement();
+        String query = "SELECT * FROM aboutus";
+        List<About> aboutus = new ArrayList<>();
+        ResultSet result = stmt.executeQuery(query);
+        while (result.next()) {
+            About about = new About(
+                result.getInt("iD"),
+                result.getString("nombre"),
+                result.getInt("edad"),
+                result.getString("carrera"),
+                result.getString("descripcion"),
+                result.getString("fotoUrl")
+                );
+            aboutus.add(about);
+         }
+
+         result.close();
+         stmt.close();
+         return aboutus;
+
+
+    } catch (Exception e) {
+        int x= 1;
+    }
+    return null;
+
+}
 }
