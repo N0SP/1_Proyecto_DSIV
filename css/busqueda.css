@@ -53,9 +53,9 @@ body {
  } 
 
  .container img {
-     height:120px;
-     width:60%;
- }
+    height: -webkit-fill-available;
+    width: auto;
+}
 
  .sidebar {
      flex-basis:25%;
