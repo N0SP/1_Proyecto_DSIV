@@ -2,7 +2,7 @@ POST http://localhost:8080/noticia
 Content-Type: application/json
 
 {
-    "titulo": "TEEST2",
+    "titulo": "TEEST23",
     "descripcion": "Argentina ganó Mexico con el resultado 2-0",
     "categoriaId": 1,
     "fotoUrl": "foto",

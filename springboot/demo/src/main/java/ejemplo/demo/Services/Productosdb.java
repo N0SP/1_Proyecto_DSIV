@@ -107,7 +107,7 @@ public class Productosdb {
         int resultado=0;
 
          try {
-           Date fetcha = new Date(resultado);
+           Date fetcha = new Date();
            
             Statement stm = _cn.createStatement();
             String query ="Call UpdateNoticia("
@@ -136,7 +136,7 @@ public class Productosdb {
         int resultado=0;
 
          try {
-           Date fetcha = new Date(resultado);
+           Date fetcha = new Date();
            
             Statement stm = _cn.createStatement();
             String query ="Call InsertarNoticia('"
@@ -187,16 +187,13 @@ public class Productosdb {
         int resultado=0;
 
         try {
-            Date fetcha = new Date(resultado);
+       
             Statement stm = _cn.createStatement();
             String query ="Call UpdateCategoria("+categoria.getCategoriaId()+",'"+categoria.getNombre()+"')";
-            Reporte reporte = new Reporte("Actualizar Categoria", fetcha.toString(), categoria.getNombre(), categoria.getCategoriaId(), categoria.getNombre());
-            String query2= "Call InsertReporte('"
-            +reporte.getAccion()+"','"+reporte.getDate()+"','"+categoria.getNombre()+"' ,"+categoria.getCategoriaId()+")";
+           
 
             resultado=stm.executeUpdate(query);
-            resultado=stm.executeUpdate(query2);
-
+         
         } catch(Exception e) {
             int x=1;
 
@@ -209,10 +206,13 @@ public class Productosdb {
         int resultado=0;
 
         try {
+     
             Statement stm = _cn.createStatement();
             String query ="Call InsertarCategoria('"+categoria.getNombre()+"')";
+            
         
             resultado=stm.executeUpdate(query);
+        
         } catch(Exception e) {
             int x=1;
 
@@ -305,7 +305,7 @@ public class Productosdb {
         int resultado=0;
 
         try {
-            Date fetcha = new Date(resultado);
+            Date fetcha = new Date();
             Statement stm = _cn.createStatement();
             String query ="Call InsertarEvento('"
             +evento.getTitulo()+"','"+evento.getDescripcion()+"',"+evento.getCategoriaId()+" ,'"+evento.getFotoUrl()+"')";
@@ -440,6 +440,7 @@ public class Productosdb {
 
     }
     
+
  
 /* ------------------ABOUT US---------------------- */
 public List<About> ObtenerAboutUs() {

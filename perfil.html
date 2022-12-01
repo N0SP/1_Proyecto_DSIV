@@ -7,7 +7,13 @@
     <link rel="stylesheet" href="css/perfil.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/footer.css">
-    <title>Document</title>
+    <title>Perfil</title>
+    <script>
+        function cerrarCecion(){
+            localStorage.removeItem('usuario');
+            window.location.href="index.html"
+        }
+    </script>
 </head>
 <body onload="getUser()">
     <nav>
@@ -19,8 +25,8 @@
             <li><a href="about.html">Sobre nosotros</a></li>
             <li><a href="eventos.html">Eventos</a></li>
             <li><a href="noticias.html">Noticias</a></li>
-            <li><a href="">Contactanos</a></li>
             <li class="itemseperate"><a href="" class="main">Mi perfil</a></li>
+            <li><a onclick="cerrarCecion()">Cerrar sesión</a></li>
             
     <li>
         <a href="busqueda.html"><img src="img/search.png" class="search" alt=""></a> 

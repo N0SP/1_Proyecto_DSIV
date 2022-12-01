@@ -7,7 +7,21 @@
     <link rel="stylesheet" href="css/index1.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/footer.css">
-    <title>Document</title>
+    <title>Inicio</title>
+    <script>
+        function uneNos(){
+            window.location.href="registro.html";
+        }
+        function aboutUs(){
+            window.location.href="about.html";
+        }
+        function goEventos(){
+            window.location.href="eventos.html";
+        }
+        function goNoticias(){
+            window.location.href="noticias.html";
+        }
+    </script>
 </head>
 <body onload="setNavbarInicio()">
     <header>
@@ -18,7 +32,7 @@
             <img src="img/chica.png" class="chica" alt="">
             <div class="bannertext">
                 <h1> La organización líder de deportes en América Latina</h1>
-                <button>Unete!</button>
+                <button onclick="uneNos()">Únete</button>
             </div>
         </section>
     </header>
@@ -29,7 +43,7 @@
         <div>
             <h2>Reunimos a personas de todo el mundo con deportes y eventos</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p> 
-            <button>Lee mas</button>
+            <button onclick="aboutUs()">Leer mas</button>
         </div>
         <img src="img/nosotros.jpeg" alt="">
     </section>
@@ -43,13 +57,13 @@
                 <img src="img/evneto.png" alt="">
                 <h2>Eventos</h2>
                 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                <button>Lee mas</button>
+                <button onclick="goEventos()">Leer mas</button>
             </div>
             <div>
                 <img src="img/sports.png" alt="">
                 <h2>Noticias</h2>
                 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                <button>Lee mas</button>
+                <button onclick="goNoticias()">Leer mas</button>
             </div>
 
         </section>

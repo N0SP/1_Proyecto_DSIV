@@ -6,10 +6,7 @@ body {
    margin:0%;
    background: radial-gradient(circle, rgba(196,252,248,1) 0%, rgba(219,255,253,1) 43%, rgba(0,232,255,0.5886729691876751) 100%);
 }
-.main {
-    color:#9AD7E4;
-    font-weight:800;
-}
+
 .title {
     text-align: center;
     font-style: normal;
