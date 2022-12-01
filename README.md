@@ -1,4 +1,4 @@
 # 1_Proyecto_DSIV
 Integrantes:
-Norman Sparks |
-Elena Rimas 
+Norman Sparks Github: N0SP |
+Elena Rimas: Github elenafullstack
