@@ -66,7 +66,7 @@ function MapearCategorias(categorias) {
 
 function crearBoton(categoria) {
 
-   return `<button onclick="showEvents(${categoria.categoriaID})">
+   return `<button onclick="showEvents(${categoria.categoriaId})">
             ${categoria.nombre}
             </button>`
 }
@@ -79,8 +79,9 @@ function showEvents(categoriaID){
             eventos= json;
         })
 
+
         var filteredEventos = eventos.filter(evento=>evento.categoriaId==categoriaID);
-        console.log(filteredEventos);
+
         MapearEventos(filteredEventos);
 
     });

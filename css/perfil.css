@@ -147,3 +147,9 @@ input {
     font-weight: 500;
 }
 
+@media (max-width: 1100px) { 
+    .profilebox {
+        margin-bottom: 300px;
+    }
+
+}

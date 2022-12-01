@@ -33,10 +33,10 @@ function MapearReportes(array) {
 
 function MapearPlantilla(reporte){
     return `    <tr>
-                    <td>${reporte.date}</td>
-                    <td>${reporte.accion}</td>
-                    <td>${reporte.titulo}</td>
-                    <td>${reporte.categoriaNombre}</td>
+                    <td class="reporte">${reporte.date}</td>
+                    <td class="reporte">${reporte.accion}</td>
+                    <td class="reporte">${reporte.titulo}</td>
+                    <td class="reporte">${reporte.categoriaNombre}</td>
                 </tr>`
           
 

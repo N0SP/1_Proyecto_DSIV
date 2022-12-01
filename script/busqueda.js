@@ -58,6 +58,8 @@ function MapearPlantillaEvento(evento){
 
 function filterNoticias() {
     var filter=document.getElementById('textbox').value.toLowerCase();
+    console.log(filter);
+    console.log('hola');
     if (filter!= "") {
     fetch('http://localhost:8080/noticias/all').
     then(resultado=> {
@@ -78,10 +80,7 @@ function MapearNoticias(array, filter) {
     let contenedor=document.getElementById('noticias');
     contenedor.innerHTML="";
     let contenedor2=document.getElementById('resultN');
-    console.log(contenedor2);
     contenedor2.innerHTML=` <h2 class="noticiatitle"> ${array.length}  Noticia(s) referentes a "${filter}"</h2>`
-
-
     for (let i=0; i< array.length; i++) {
         contenedor.innerHTML += MapearPlantillaNoticia(array[i]);
     }
@@ -90,11 +89,17 @@ function MapearNoticias(array, filter) {
 function MapearPlantillaNoticia(noticia){
     return `    <div>
                 <div> <h3>${noticia.categoriaNombre}</h3><h4>${noticia.titulo}</h4></div>
-                 <div><img src="${noticia.fotoUrl}" alt=""></div>
+                 <div><a onclick="showNoticia(${noticia.noticiaId})"><img src="${noticia.fotoUrl} onclick= alt=""></a></div>
                  <div><p>${noticia.descripcion}</p></div>
                 </div>
                 `
 
             
 }
+
+function showNoticia(id) {
+    localStorage.setItem('noticiaId', id);
+    window.location.href="noticia.html";
+}
+
 

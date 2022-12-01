@@ -68,6 +68,7 @@ function GuardarNoticia(){
         categoriaId:document.getElementById("categoria").value,
         fotoUrl: document.getElementById("url").value
     };
+    console.log(data);
     if (data.titulo == "" || data.descripcion == "" || data.contenido == "" || data.categoriaId == "" || data.fotoUrl == "") {
         alert("Todos los campos son obligatorios");
     } else {
