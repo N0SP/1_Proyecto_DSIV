@@ -5,7 +5,7 @@ import java.util.Date;
 public class Reporte {
 
 
-
+ 
     private String accion;
     private String date;
     private String titulo;
@@ -15,6 +15,7 @@ public class Reporte {
   
     public Reporte( String accion, String date, String titulo, int categoriaId, String categoriaNombre) {
  
+
         this.accion = accion;
         this.date = date;
         this.titulo = titulo;
@@ -22,7 +23,7 @@ public class Reporte {
         this.categoriaNombre = categoriaNombre;
     }
   
-    
+
 
     public String getAccion() {
         return accion;

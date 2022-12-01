@@ -10,9 +10,8 @@ function setNavbarEventos() {
             <li><a href="about.html">Sobre nosotros</a></li>
             <li><a href="eventos.html"class="main">Eventos</a></li>
             <li><a href="noticias.html">Noticias</a></li>
-            <li><a href="">Contactanos</a></li>
             <li class="itemseperate"><a href="perfil.html">Mi perfil</a></li>
-            <li><a onclick="cerrarCecionEventos()">Cerrar Seción</a></li>
+            <li><a onclick="cerrarCecionEventos()">Cerrar Sesión</a></li>
     <li>
         <a href="busqueda.html"><img src="img/search.png" class="search" alt=""></a> 
     </li>`
@@ -26,8 +25,8 @@ function setNavbarEventos() {
         <li><a href="about.html">Sobre nosotros</a></li>
         <li><a href="eventos.html"class="main">Eventos</a></li>
         <li><a href="noticias.html">Noticias</a></li>
-        <li><a href="">Contactanos</a></li>
-        <li class="itemseperate"><a href="login.html">Iniciar seción</a></li>
+
+        <li class="itemseperate"><a href="login.html">Iniciar sesión</a></li>
         <li><a href="registro.html">Registrarse</a></li>
 <li>
     <a href="busqueda.html"><img src="img/search.png" class="search" alt=""></a> 
@@ -50,9 +49,8 @@ function setNavbarNoticias() {
             <li><a href="about.html">Sobre nosotros</a></li>
             <li><a href="eventos.html">Eventos</a></li>
             <li><a href="noticias.html" class="main">Noticias</a></li>
-            <li><a href="">Contactanos</a></li>
             <li class="itemseperate"><a href="perfil.html">Mi perfil</a></li>
-            <li><a onclick="cerrarCecionNoticias()">Cerrar Seción</a></li>
+            <li><a onclick="cerrarCecionNoticias()">Cerrar Sesión</a></li>
     <li>
         <a href="busqueda.html"><img src="img/search.png" class="search" alt=""></a> 
     </li>`
@@ -66,8 +64,7 @@ function setNavbarNoticias() {
         <li><a href="about.html">Sobre nosotros</a></li>
         <li><a href="eventos.html">Eventos</a></li>
         <li><a href="noticias.html" class="main">Noticias</a></li>
-        <li><a href="">Contactanos</a></li>
-        <li class="itemseperate"><a href="login.html">Iniciar seción</a></li>
+        <li class="itemseperate"><a href="login.html">Iniciar sesión</a></li>
         <li><a href="registro.html">Registrarse</a></li>
 <li>
     <a href="busqueda.html"><img src="img/search.png" class="search" alt=""></a> 
@@ -90,9 +87,8 @@ function setNavbarBusqueda() {
             <li><a href="about.html">Sobre nosotros</a></li>
             <li><a href="eventos.html">Eventos</a></li>
             <li><a href="noticias.html" >Noticias</a></li>
-            <li><a href="">Contactanos</a></li>
             <li class="itemseperate"><a href="perfil.html">Mi perfil</a></li>
-            <li><a onclick="cerrarCecionBusqueda()">Cerrar Seción</a></li>
+            <li><a onclick="cerrarCecionBusqueda()">Cerrar Sesión</a></li>
     <li>
         <a href="busqueda.html"><img src="img/search.png" class="search" alt=""></a> 
     </li>`
@@ -106,8 +102,7 @@ function setNavbarBusqueda() {
         <li><a href="about.html">Sobre nosotros</a></li>
         <li><a href="eventos.html">Eventos</a></li>
         <li><a href="noticias.html" >Noticias</a></li>
-        <li><a href="">Contactanos</a></li>
-        <li class="itemseperate"><a href="login.html">Iniciar seción</a></li>
+        <li class="itemseperate"><a href="login.html">Iniciar sesión</a></li>
         <li><a href="registro.html">Registrarse</a></li>
 <li>
     <a href="busqueda.html"><img src="img/search.png" class="search" alt=""></a> 
@@ -130,9 +125,8 @@ function setNavbarInicio() {
             <li><a href="about.html">Sobre nosotros</a></li>
             <li><a href="eventos.html">Eventos</a></li>
             <li><a href="noticias.html" >Noticias</a></li>
-            <li><a href="">Contactanos</a></li>
             <li class="itemseperate"><a href="perfil.html">Mi perfil</a></li>
-            <li><a onclick="cerrarCecionInicio()">Cerrar Seción</a></li>
+            <li><a onclick="cerrarCecionInicio()">Cerrar Sesión</a></li>
     <li>
         <a href="busqueda.html"><img src="img/search.png" class="search" alt=""></a> 
     </li>`
@@ -146,8 +140,7 @@ function setNavbarInicio() {
         <li><a href="about.html">Sobre nosotros</a></li>
         <li><a href="eventos.html">Eventos</a></li>
         <li><a href="noticias.html" >Noticias</a></li>
-        <li><a href="">Contactanos</a></li>
-        <li class="itemseperate"><a href="login.html">Iniciar seción</a></li>
+        <li class="itemseperate"><a href="login.html">Iniciar sesión</a></li>
         <li><a href="registro.html">Registrarse</a></li>
 <li>
     <a href="busqueda.html"><img src="img/search.png" class="search" alt=""></a> 
@@ -170,9 +163,8 @@ function setNavbarAbout() {
             <li><a href="about.html" class="main">Sobre nosotros</a></li>
             <li><a href="eventos.html">Eventos</a></li>
             <li><a href="noticias.html" >Noticias</a></li>
-            <li><a href="">Contactanos</a></li>
             <li class="itemseperate"><a href="perfil.html">Mi perfil</a></li>
-            <li><a onclick="cerrarCecionAbout()">Cerrar Seción</a></li>
+            <li><a onclick="cerrarCecionAbout()">Cerrar Sesión</a></li>
     <li>
         <a href="busqueda.html"><img src="img/search.png" class="search" alt=""></a> 
     </li>`
@@ -186,8 +178,7 @@ function setNavbarAbout() {
         <li><a href="about.html" class="main">Sobre nosotros</a></li>
         <li><a href="eventos.html">Eventos</a></li>
         <li><a href="noticias.html" >Noticias</a></li>
-        <li><a href="">Contactanos</a></li>
-        <li class="itemseperate"><a href="login.html">Iniciar seción</a></li>
+        <li class="itemseperate"><a href="login.html">Iniciar sesión</a></li>
         <li><a href="registro.html">Registrarse</a></li>
 <li>
     <a href="busqueda.html"><img src="img/search.png" class="search" alt=""></a> 

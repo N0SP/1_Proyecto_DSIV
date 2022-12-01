@@ -97,7 +97,7 @@ function MapearCategorias(categorias) {
 
 function crearBoton(categoria) {
 
-    return `<button onclick="showNoticias(${categoria.categoriaID})">
+    return `<button onclick="showNoticias(${categoria.categoriaId})">
              ${categoria.nombre}
              </button>`
  }
