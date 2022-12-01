@@ -90,11 +90,17 @@ function MapearNoticias(array, filter) {
 function MapearPlantillaNoticia(noticia){
     return `    <div>
                 <div> <h3>${noticia.categoriaNombre}</h3><h4>${noticia.titulo}</h4></div>
-                 <div><img src="${noticia.fotoUrl}" alt=""></div>
+                 <div><a onclick="showNoticia(${noticia.noticiaId})"><img src="${noticia.fotoUrl} onclick= alt=""></a></div>
                  <div><p>${noticia.descripcion}</p></div>
                 </div>
                 `
 
             
 }
+
+function showNoticia(id) {
+    localStorage.setItem('noticiaId', id);
+    window.location.href="noticia.html";
+}
+
 

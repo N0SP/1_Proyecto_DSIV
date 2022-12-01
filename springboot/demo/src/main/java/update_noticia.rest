@@ -1,0 +1,11 @@
+PUT http://localhost:8080/noticia
+Content-Type: application/json
+
+{
+    "noticiaId": 1,
+    "titulo": "Los Yankees Ganan la Liga!WAU",
+    "descripcion": "Los Yankees ganan la Liga con la resultado de 4-1. Ha sido su mejor año. Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    "categoriaId": 2,
+    "fotoUrl":"https://elitesportsny.com/wp-content/uploads/2019/09/New_York_Yankees_AL_East_Champions.jpg",
+    "contenido": "Though the game was never in doubt, Boone opted to use closer Aroldis Chapman to finish this one. The lefty struck out two and relented a hit in his inning of work.  The celebration wasn’t as businesslike as previous Yankee division-winning clubs, as the champagne and smiles flowed at Yankee Stadium. But the team still understands this is just the first step of an entire October process, via Associated Press.  “We got a lot bigger fish to fry, but this is the first step along the way,” Boone said. “Nothing has got in their way. Whatever has come adversity-wise, they faced it and powered right through it.”  The only remaining regular-season matter revolves around home-field advantage throughout. The Yankees remain 0.5 games behind the Houston Astros and two wins clear of the Los Angeles Dodgers on the NL side."
+}

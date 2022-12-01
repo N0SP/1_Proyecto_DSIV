@@ -39,7 +39,7 @@ function MapearNoticiasADMIN(array) {
 function MapearPNoticiasADMIN(noticiasadm){
     return `
     <tr>  <td>${noticiasadm.noticiaId}</td>
-          <td>${noticiasadm.categoriaId}</td>  
+          <td>${noticiasadm.categoriaNombre}</td>  
           <td>${noticiasadm.titulo}</td>
           <td>${noticiasadm.descripcion}</td>
           <td>${noticiasadm.fotoUrl}</td>
@@ -197,7 +197,7 @@ function MapearPlantillaADMIN(eventosadm){
     <tr>  <td>${eventosadm.eventoId}</td>  
           <td>${eventosadm.titulo}</td>
           <td>${eventosadm.descripcion}</td>
-          <td>${eventosadm.categoriaId}</td>
+          <td>${eventosadm.categoriaNombre}</td>
           <td>${eventosadm.fotoUrl}</td>
           <td>
           <div class="botones">

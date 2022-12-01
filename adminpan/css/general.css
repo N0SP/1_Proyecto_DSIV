@@ -240,10 +240,12 @@ h1 {
         box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
         border-radius: 12px;
         text-align: center;
-        margin: 0px 260px 45px auto;
+        margin: 0px 20px 45px auto;
 }
-.mini-box {
-    
+
+.reporte{
+
+    word-wrap: break-word;
 }
 
 .version {
@@ -424,6 +426,7 @@ table.Tablareport {
     border-color: #7EA8F8;
     border-style: solid;
     padding: 5px;
+    table-layout: fixed;
   }
   
   table.Tablareport thead {
