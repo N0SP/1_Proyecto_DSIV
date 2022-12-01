@@ -145,6 +145,7 @@ public class Productosdb {
 
     }
 
+    
 /* ------------------CATEGORIAS-------------- */
     public List<Categoria> ObtenerCategorias() {
         try {
@@ -215,7 +216,9 @@ public class Productosdb {
         return resultado;
 
     }
+    
 /* ------------------EVENTOS----------------- */
+
     public List<Evento> ObtenerEventos() {
         try {
            Statement stmt = _cn.createStatement();
@@ -430,29 +433,6 @@ public class Productosdb {
 
         }
         return resultado;
-
-    public int ActualizarUsuario(Usuario usuario){
-        int resultado=0;
-
-        try {
-            Statement stm = _cn.createStatement();
-            String query ="Call UpdateUsuario(" +usuario.getUserId()+",'"
-            +usuario.getNombre()+"','"+usuario.getCorreo()+"' ,'"+usuario.getContrasena()+"')";
-           
-            resultado=stm.executeUpdate(query);
-      
-
-        } catch(Exception e) {
-            int x=1;
-
-        }
-        return resultado;
-
-
-    }
-
-
-    
 
     }
     
