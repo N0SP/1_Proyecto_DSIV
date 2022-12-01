@@ -6,14 +6,9 @@ body {
     width:99%;
     font-family: 'Poppins', sans-serif;
     background: radial-gradient(circle, rgba(196,252,248,1) 0%, rgba(219,255,253,1) 43%, rgba(0,232,255,0.5886729691876751) 100%);
-    font-size: 12px;
+
   
 
-}
-.noticia {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
 }
 
 .noticia div {
@@ -23,14 +18,17 @@ body {
     align-items: center;
 
     gap:40px;
-    margin: 0% 10%;
+    margin: 2% 10%;
   
 
 }
 
 .noticia {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     background-color:#b8fffb;
-    margin: 0% 14%;
+    margin: 0% 25%;
     margin-top: 4%;
     padding: 2% 0%;
     border-radius: 70px;
@@ -40,6 +38,7 @@ body {
     text-align:center;
     border-bottom:2px solid #003243;
     width:50%;
+    padding-bottom:3px;
     margin-bottom: 2%;
 }
 
@@ -47,6 +46,7 @@ body {
 
 .noticia img {
     height:250px;
+    width:90%;
     
 
 
@@ -61,6 +61,9 @@ body {
 
 .buttons>div {
     width:12%;
+    display:flex;
+ 
+    justify-content: center;
 }
 .buttons {
     margin-top:4%;
@@ -73,11 +76,16 @@ button {
     font-family: 'Poppins';
     border-radius: 20px;
     border-style:none;
-    padding:3%;
+    padding:10%;
     background-color:#017EA9;
     color:white;
-    width:100%;
+    font-size:15px;
+ 
     font-weight: 500;
+}
+
+p{
+    width:90%;
 }
 
 .comments {
@@ -101,10 +109,7 @@ button {
 }
 
 .commentsSub {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: row;
+   
     background-color:#F3F3F3;
     padding:2%;
     margin: 0% 8%;
@@ -113,9 +118,7 @@ button {
     
     
 }
-.commentsSub>div:nth-child(1) {
-    width:15%;
-}
+
 .commentsSub>div:nth-child(2) {
     width:85%;
 }
@@ -126,4 +129,11 @@ button {
 
 .enviar {
     width:15%;
+}
+
+@media (max-width: 1500px) { 
+    .noticia div {
+       flex-direction:column;
+    }
+
 }

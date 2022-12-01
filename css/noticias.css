@@ -67,6 +67,19 @@ body {
     font-weight:275;
     
     }
+
+#categorias button {
+    background:#017EA9;
+    border:none;
+    border-radius: 10px;
+    color:white;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    padding:0.5%;
+    margin-right:1%;
+}
     
     #categorias {
         margin-left:3%;
@@ -74,11 +87,7 @@ body {
     
     }
     
-    #categorias button {
-        padding:0.5%;
-        margin-right:1%;
-    }
-
+ 
 .subSection {
     margin-bottom: 2%;
 }
