@@ -2,5 +2,3 @@
 Integrantes:
 Norman Sparks |
 Elena Rimas |
-Kevin Delgado |
-Marcos De Los Santos
