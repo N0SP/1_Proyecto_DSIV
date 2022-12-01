@@ -8,7 +8,7 @@
     
     <title>Panel Administrativo</title>
 </head>
-<body>
+<body onload="start()">
     <header>
         <section class="title">
             <h1>Panel Administrativo</h1>
@@ -60,78 +60,22 @@
         <section class="container-log">
             <div class="head-section">
             <h1>Usuarios</h1>
-            <div class="boton-modal-crear">
-                <label for="btn-modal-create">Crear Nuevo</label>
-            </div>
             </div>
             <table class="Tablareport">
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Usuario</th>
+                    <th>Nombre</th>
                     <th>correo</th>
                     <th>contraseña</th>
-                    <th>rol</th>
                     <th>Acciones</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>Row 1, Cell 1</td>
-                    <td>Row 1, Cell 2</td>
-                    <td>Row 1, Cell 3</td>
-                    <td>Row 1, Cell 4</td>
-                    <td>Row 1, Cell 5</td>
-                    <td>
-                    <div class="botones">
-                        <div class="boton-modal">
-                            <label for="btn-modal-edit"><i class="material-icons-edit" data-toggle="tooltip" title="Edit">&#xE254;</i></label>
-                        </div>
-                        <div class="boton-modal">
-                            <label for="btn-modal-delete"><i class="material-icons-delete" data-toggle="tooltip" title="Delete">&#xE872;</i></label>
-                        </div>
-                    </div>
-                    </td>
-                  </tr>
-                  </tr>
+                <tbody id="usuariosadm">
                 </tbody>
               </table>
         </section>
 </section>
-<!--Ventana Modal Create-->
-<input type="checkbox" id="btn-modal-create">
-<div class="container-modal-create">
-    <div class="content-modal">
-        <div class="btn-cerrar">
-            <label for="btn-modal-create">Cerrar</label>
-        </div>
-        <h2>Crear Usuario</h2>
-        <form action="modificar-users.html" method="POST">
-            <div class="form-group">
-                <label for="usuario">Usuario</label>
-                <input type="text" name="usuario" id="usuario" placeholder="Usuario">
-            </div>
-            <div class="form-group">
-                <label for="correo">Correo</label>
-                <input type="email" name="correo" id="correo" placeholder="Correo">
-            </div>
-            <div class="form-group">
-                <label for="contraseña">Contraseña</label>
-                <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña">
-            </div>
-            <div class="form-group">
-                <label for="rol">Rol</label>
-                <select name="rol" id="rol">
-                    <option value="1">Administrador</option>
-                    <option value="2">Usuario</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Crear" class="btn btn-primary">
-            </div>
-        </form>
-    </div>
-</div>
 <!--Ventana Modal Edit-->
 <input type="checkbox" id="btn-modal-edit">
 <div class="container-modal-edit">
@@ -140,10 +84,11 @@
             <label for="btn-modal-edit">Cerrar</label>
         </div>
         <h2>Editar Usuario</h2>
-        <form action="deportes.html" method="POST">
+        <form action="#">
             <div class="form-group">
                 <label for="usuario">Usuario</label>
-                <input type="text" name="usuario" id="usuario" placeholder="Usuario">
+                <input type="hidden" id="userId" name="userId">
+                <input type="text" name="nombre" id="nombre" placeholder="Usuario">
             </div>
             <div class="form-group">
                 <label for="correo">Correo</label>
@@ -151,36 +96,14 @@
             </div>
             <div class="form-group">
                 <label for="contraseña">Contraseña</label>
-                <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña">
+                <input type="text" name="contrasena" id="contrasena" placeholder="Contraseña">
             </div>
             <div class="form-group">
-                <label for="rol">Rol</label>
-                <select name="rol" id="rol">
-                    <option value="1">Administrador</option>
-                    <option value="2">Usuario</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Editar" class="btn btn-primary">
+                <input type="submit" onclick="EditarUsuario()" value="Editar" class="btn btn-primary">
             </div>
         </form>
     </div>
 </div>
-<!--Ventana Modal Delete-->
-<input type="checkbox" id="btn-modal-delete">
-<div class="container-modal-delete">
-    <div class="content-modal">
-        <h2>Eliminar Deporte</h2>
-        <p>¿Seguro que quieres eliminiar El usuario Lorem Ipsum?</p>
-        <div class="botones">
-        <div class="btn-enviar">
-            <input type="submit" value="Eliminar" class="btn btn-primary">
-        </div>
-        <div class="btn-cerrar">
-        <label for="btn-modal-delete">Cancelar</label>
-        </div>
-    </div>
-</div>
-
+<script src="script/usuario.js"></script>
 </body>
 </html>

@@ -16,8 +16,7 @@ public class Productosdb {
         _cn = new Conexion().openDb();
     }
 
-    //noticias
-
+/* ------------------NOTICIAS---------------- */
     public List<Noticia> ObtenerNoticias() {
         try {
            Statement stmt = _cn.createStatement();
@@ -48,7 +47,6 @@ public class Productosdb {
         return null;
     }
 
-
     public Noticia ObtenerNoticia(int noticiaId) {
 
         try {
@@ -78,6 +76,148 @@ public class Productosdb {
 
     }
 
+    public int EliminarNoticias(int noticiaId) {
+        int resultado = 0;
+
+        try {
+            Statement stmt = _cn.createStatement();
+            String query = "Call DeleteNoticia("+noticiaId+")";
+            
+            return stmt.executeUpdate(query);
+        } catch(Exception e) {
+            int x=1;
+
+        }
+        return resultado;
+
+    }
+    
+    public int ActualizarNoticias(Noticia noticia){
+        int resultado=0;
+
+         try {
+           Date fetcha = new Date();
+           
+            Statement stm = _cn.createStatement();
+            String query ="Call UpdateNoticia("
+            +noticia.getNoticiaId()+",'"
+            +noticia.getTitulo()+"','"
+            +noticia.getDescripcion()+"',"
+            +noticia.getCategoriaId()+" ,'"
+            +noticia.getFotoUrl()+"','"
+            +noticia.getContenido()+"')";
+           Reporte reporte = new Reporte("Actualiza noticia", fetcha.toString(), noticia.getTitulo(), noticia.getCategoriaId(), noticia.getCategoriaNombre());
+            String query2= "Call InsertReporte('"
+            +reporte.getAccion()+"','"+reporte.getDate()+"','"+noticia.getTitulo()+"' ,"+noticia.getCategoriaId()+")";
+        
+         
+            resultado=stm.executeUpdate(query);
+           resultado=stm.executeUpdate(query2);
+        } catch(Exception e) {
+             int x=1;
+
+        }
+        return resultado;
+
+    }    
+
+    public int GuardarNoticia(Noticia noticia){
+        int resultado=0;
+
+         try {
+           Date fetcha = new Date();
+           
+            Statement stm = _cn.createStatement();
+            String query ="Call InsertarNoticia('"
+            +noticia.getTitulo()+"','"+noticia.getDescripcion()+"',"+noticia.getCategoriaId()+" ,'"+noticia.getFotoUrl()+"','"+noticia.getContenido()+"')";
+           Reporte reporte = new Reporte("Añadir noticia", fetcha.toString(), noticia.getTitulo(), noticia.getCategoriaId(), noticia.getCategoriaNombre());
+            String query2= "Call InsertReporte('"
+            +reporte.getAccion()+"','"+reporte.getDate()+"','"+noticia.getTitulo()+"' ,"+noticia.getCategoriaId()+")";
+        
+         
+            resultado=stm.executeUpdate(query);
+           resultado=stm.executeUpdate(query2);
+        } catch(Exception e) {
+             int x=1;
+
+        }
+        return resultado;
+
+    }
+
+    
+/* ------------------CATEGORIAS-------------- */
+    public List<Categoria> ObtenerCategorias() {
+        try {
+           Statement stmt = _cn.createStatement();
+            String query = "SELECT * FROM categoria";
+            List<Categoria> categorias = new ArrayList<>();
+            ResultSet result = stmt.executeQuery(query);
+            while (result.next()) {
+                Categoria categoria = new Categoria(
+                    result.getInt("categoriaID"), 
+                    result.getString("nombre")
+                    );
+                categorias.add(categoria);
+             }
+
+             result.close();
+             stmt.close();
+             return categorias;
+
+
+        } catch (Exception e) {
+            int x= 1;
+        }
+        return null;
+    }
+
+    public int ActualizarCategoria(Categoria categoria){
+        int resultado=0;
+
+        try {
+            Date fetcha = new Date();
+            Statement stm = _cn.createStatement();
+            String query ="Call UpdateCategoria("+categoria.getCategoriaId()+",'"+categoria.getNombre()+"')";
+            Reporte reporte = new Reporte("Actualizar Categoria", fetcha.toString(), categoria.getNombre(), categoria.getCategoriaId(), categoria.getNombre());
+            String query2= "Call InsertReporte('"
+            +reporte.getAccion()+"','"+reporte.getDate()+"','"+categoria.getNombre()+"' ,"+categoria.getCategoriaId()+")";
+
+            resultado=stm.executeUpdate(query);
+            resultado=stm.executeUpdate(query2);
+
+        } catch(Exception e) {
+            int x=1;
+
+        }
+        return resultado;
+
+    }
+
+    public int GuardarCategoria(Categoria categoria){
+        int resultado=0;
+
+        try {
+            Date fetcha = new Date();
+            Statement stm = _cn.createStatement();
+            String query ="Call InsertarCategoria('"+categoria.getNombre()+"')";
+            
+            Reporte reporte = new Reporte("Añadir Categoria", fetcha.toString(), categoria.getNombre(), categoria.getCategoriaId(), categoria.getNombre());
+            String query2= "Call InsertReporte('"
+            +reporte.getAccion()+"','"+reporte.getDate()+"','"+categoria.getNombre()+"' ,"+categoria.getCategoriaId()+")";
+
+
+            resultado=stm.executeUpdate(query);
+            resultado=stm.executeUpdate(query2);
+        } catch(Exception e) {
+            int x=1;
+
+        }
+        return resultado;
+
+    }
+    
+/* ------------------EVENTOS----------------- */
 
     public List<Evento> ObtenerEventos() {
         try {
@@ -108,65 +248,6 @@ public class Productosdb {
         return null;
     }
 
-    public int EliminarNoticias(int noticiaId) {
-        int resultado = 0;
-        Date fetcha = new Date();
-
-        try {
-            Statement stmt = _cn.createStatement();
-            String query = "Call DeleteNoticia("+noticiaId+")";
-
-            String query2="SELECT noticiaID,titulo,categoria.categoriaID ,nombre FROM categoria JOIN noticia on categoria.categoriaID=noticia.categoriaID WHERE noticiaID="+noticiaId+"";
-            ResultSet result = stmt.executeQuery(query2);
-            if (result.next()) {
-            Reporte reporte = new Reporte("Eliminar noticia", fetcha.toString(), result.getString("titulo"), result.getInt("categoriaID"), result.getString("nombre"));
-            String query3="Call InsertReporte('"
-            +reporte.getAccion()+"','"+reporte.getDate()+"','"+reporte.getTitulo()+"' ,"+reporte.getCategoriaId()+")";
-
-            resultado=stmt.executeUpdate(query3);
-            return stmt.executeUpdate(query);
-            }
-            
-        } catch(Exception e) {
-            int x=1;
-
-        }
-        return resultado;
-
-    }
-
-
-
-
-    //categoria
-
-    public List<Categoria> ObtenerCategorias() {
-        try {
-           Statement stmt = _cn.createStatement();
-            String query = "SELECT * FROM categoria";
-            List<Categoria> categorias = new ArrayList<>();
-            ResultSet result = stmt.executeQuery(query);
-            while (result.next()) {
-                Categoria categoria = new Categoria(
-                    result.getInt("categoriaID"), 
-                    result.getString("nombre")
-                    );
-                categorias.add(categoria);
-             }
-
-             result.close();
-             stmt.close();
-             return categorias;
-
-
-        } catch (Exception e) {
-            int x= 1;
-        }
-        return null;
-    }
-
-   //evento
-
     public int EliminarEventos(int eventoId) {
         int resultado = 0;
         Date fetcha= new Date();
@@ -192,8 +273,29 @@ public class Productosdb {
         return resultado;
 
     }
+  
+    public int ActualizarEvento(Evento evento){
+        int resultado=0;
 
- 
+        try {
+            Date fetcha = new Date();
+            Statement stm = _cn.createStatement();
+            String query ="Call UpdateEvento(" +evento.getEventoId()+",'"
+            +evento.getTitulo()+"','"+evento.getDescripcion()+"',"+evento.getCategoriaId()+" ,'"+evento.getFotoUrl()+"')";
+            Reporte reporte = new Reporte("Actualizar evento", fetcha.toString(), evento.getTitulo(), evento.getCategoriaId(), evento.getCategoriaNombre());
+            String query2= "Call InsertReporte('"
+            +reporte.getAccion()+"','"+reporte.getDate()+"','"+evento.getTitulo()+"' ,"+evento.getCategoriaId()+")";
+
+            resultado=stm.executeUpdate(query);
+            resultado=stm.executeUpdate(query2);
+
+        } catch(Exception e) {
+            int x=1;
+
+        }
+        return resultado;
+
+    }
 
     public int GuardarEvento(Evento evento){
         int resultado=0;
@@ -219,84 +321,7 @@ public class Productosdb {
     }
 
 
-    public int ActualizarNoticias(Noticia noticia){
-        int resultado=0;
-
-         try {
-           Date fetcha = new Date(resultado);
-           
-            Statement stm = _cn.createStatement();
-            String query ="Call UpdateNoticia("
-            +noticia.getNoticiaId()+",'"
-            +noticia.getTitulo()+"','"
-            +noticia.getDescripcion()+"',"
-            +noticia.getCategoriaId()+" ,'"
-            +noticia.getFotoUrl()+"','"
-            +noticia.getContenido()+"')";
-           Reporte reporte = new Reporte("Actualiza noticia", fetcha.toString(), noticia.getTitulo(), noticia.getCategoriaId(), noticia.getCategoriaNombre());
-            String query2= "Call InsertReporte('"
-            +reporte.getAccion()+"','"+reporte.getDate()+"','"+noticia.getTitulo()+"' ,"+noticia.getCategoriaId()+")";
-        
-         
-            resultado=stm.executeUpdate(query);
-           resultado=stm.executeUpdate(query2);
-        } catch(Exception e) {
-             int x=1;
-
-        }
-        return resultado;
-
-    }
-  
-      public int GuardarNoticia(Noticia noticia){
-        int resultado=0;
-
-         try {
-           Date fetcha = new Date(resultado);
-           
-            Statement stm = _cn.createStatement();
-            String query ="Call InsertarNoticia('"
-            +noticia.getTitulo()+"','"+noticia.getDescripcion()+"',"+noticia.getCategoriaId()+" ,'"+noticia.getFotoUrl()+"','"+noticia.getContenido()+"')";
-           Reporte reporte = new Reporte("Añadir noticia", fetcha.toString(), noticia.getTitulo(), noticia.getCategoriaId(), noticia.getCategoriaNombre());
-            String query2= "Call InsertReporte('"
-            +reporte.getAccion()+"','"+reporte.getDate()+"','"+noticia.getTitulo()+"' ,"+noticia.getCategoriaId()+")";
-        
-         
-            resultado=stm.executeUpdate(query);
-           resultado=stm.executeUpdate(query2);
-        } catch(Exception e) {
-             int x=1;
-
-        }
-        return resultado;
-
-    }
-
-    public int ActualizarEvento(Evento evento){
-        int resultado=0;
-
-        try {
-            Date fetcha = new Date();
-            Statement stm = _cn.createStatement();
-            String query ="Call UpdateEvento(" +evento.getEventoId()+",'"
-            +evento.getTitulo()+"','"+evento.getDescripcion()+"',"+evento.getCategoriaId()+" ,'"+evento.getFotoUrl()+"')";
-            Reporte reporte = new Reporte("Actualizar evento", fetcha.toString(), evento.getTitulo(), evento.getCategoriaId(), evento.getCategoriaNombre());
-            String query2= "Call InsertReporte('"
-            +reporte.getAccion()+"','"+reporte.getDate()+"','"+evento.getTitulo()+"' ,"+evento.getCategoriaId()+")";
-
-            resultado=stm.executeUpdate(query);
-            resultado=stm.executeUpdate(query2);
-
-        } catch(Exception e) {
-            int x=1;
-
-        }
-        return resultado;
-
-
-    }
-
-    //reporte
+/* ------------------REPOTES----------------- */
 
     public List<Reporte> ObtenerReportes() {
         try {
@@ -326,9 +351,8 @@ public class Productosdb {
         return null;
     }
 
-    
-    //usuario
 
+/* ------------------USUARIOS---------------- */
 
 
     public List<Usuario> ObtenerUsuarios() {
@@ -384,11 +408,10 @@ public class Productosdb {
 
         try {
             Statement stm = _cn.createStatement();
-            String query ="Call UpdateUsuario(" +usuario.getUserId()+",'"
-            +usuario.getNombre()+"','"+usuario.getCorreo()+"' ,'"+usuario.getContrasena()+"')";
-           
+            String query ="Call UpdateUsuario("+usuario.getUserId()+",'"+usuario.getNombre()+"','"+usuario.getCorreo()+"','"+usuario.getContrasena()+"')";
+        
+
             resultado=stm.executeUpdate(query);
-      
 
         } catch(Exception e) {
             int x=1;
@@ -396,11 +419,21 @@ public class Productosdb {
         }
         return resultado;
 
-
     }
 
+    public int EliminarUsuario(int userId) {
+        int resultado = 0;
 
-    
+        try {
+            Statement stmt = _cn.createStatement();
+            String query = "Call DeleteUser("+userId+")";
+            return stmt.executeUpdate(query);
+        } catch(Exception e) {
+            int x=1;
 
+        }
+        return resultado;
+
+    }
     
-} 
+}

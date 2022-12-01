@@ -13,7 +13,7 @@ public class Categoria {
             this.nombre = nombre;
         }
 
-        public int getCategoriaID() {
+        public int getCategoriaId() {
             return categoriaId;
         }
 
