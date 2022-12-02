@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/general.css">
     <title>Panel Administrativo</title>
 </head>
-<body onload="ObtenerReportes()">
+<body onload="start()">
     <header>
         <section class="title">
             <h1>Panel Administrativo</h1>
@@ -53,9 +53,20 @@
     </section>
 </section>
         <section class="container-log">
+
             <h1>Reportes</h1>
             <table class="Tablareport" id="reportes">
+                <th>Usuarios</th>
+                <th>Noticias</th>
+                <th>Reportes</th>
+                    <tbody>
+                        <td id="usuarios"></td>
+                        <td id="noticia"></td>
+                        <td id="evento"></td>
+                    </tbody>
             </table>
+            <h1>Bitácora</h1>
+            <table class="Tablareport" id="bitacora"></table>
         </section>
 </section>
 
