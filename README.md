@@ -1,6 +1,12 @@
 # 1_Proyecto_DSIV
+UNIVERSIDAD TECNOLÓGICA DE PANAMÁ
+
+PROYECTO SEMESTRAL
+
+MATERIA: DESARROLLO DE SOFTWARE IV
+
+PROFESOR: JUAN ZAMORA GITHUB: juanzeta33
+
 Integrantes:
-Norman Sparks |
-Elena Rimas |
-Kevin Delgado |
-Marcos De Los Santos
+Norman Sparks Github: N0SP |
+Elena Rimas Github: elenafullstack
